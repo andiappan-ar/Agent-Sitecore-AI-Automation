@@ -1,0 +1,13 @@
+---
+ID: "12411274-4d5a-4076-853f-a2affcf21d46"
+Parent: "5acc918b-718c-4407-b6cf-792f86ccf84a"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Project/Adnoc/Components/Breadcrumb/Content
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

@@ -1,0 +1,13 @@
+---
+ID: "e06cf55f-7044-4f2e-bc51-10cd19dd669f"
+Parent: "b147dcf6-9c72-40f4-8689-74c25c82492a"
+Template: "b147dcf6-9c72-40f4-8689-74c25c82492a"
+Path: /sitecore/templates/Project/Adnoc/Components/HeroCentered/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

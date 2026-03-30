@@ -1,0 +1,20 @@
+---
+ID: "689ebfd5-61c5-4353-8f1c-c06169d9acd4"
+Parent: "1995806f0a8442b593b088f0e2ff872c"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: /sitecore/layout/Renderings/Project/Adnoc/CardTextOnly
+SharedFields:
+- ID: "1845a951-d5b6-4a68-9ffb-41620125aaee"
+  Hint: Component Name
+  Value: CardTextOnly
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

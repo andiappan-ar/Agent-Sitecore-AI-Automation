@@ -1,0 +1,34 @@
+[
+  {
+    "itemId": "110d559fdea542ea9c1c8a5df7e70ef9",
+    "name": "Home",
+    "path": "/sitecore/content/Home",
+    "template": {
+      "name": "Sample Item"
+    },
+    "children": {
+      "nodes": []
+    }
+  },
+  {
+    "itemId": "e0b621cc64874a71b79c287f5e33a94f",
+    "name": "Adnoc",
+    "path": "/sitecore/content/Adnoc",
+    "template": {
+      "name": "Headless Tenant"
+    },
+    "children": {
+      "nodes": [
+        {
+          "itemId": "743c5fbcc77c4eb2ae6649a8bb8739fd",
+          "name": "adnocgas",
+          "path": "/sitecore/content/Adnoc/adnocgas",
+          "template": {
+            "name": "Headless Site"
+          },
+          "hasChildren": true
+        }
+      ]
+    }
+  }
+]

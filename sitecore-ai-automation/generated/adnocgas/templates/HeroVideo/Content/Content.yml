@@ -1,0 +1,13 @@
+---
+ID: "4e6caa10-aa76-4712-87e1-e584cc1b59d3"
+Parent: "dd4b1514-9e9d-44c8-88d9-ea61acda2152"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Project/Adnoc/Components/HeroVideo/Content
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

@@ -1,0 +1,20 @@
+---
+ID: "924d3ecf-6818-4df1-9fb7-0b6fec20c40d"
+Parent: "48a9bcc8-f9e5-4493-94f4-1977afe8944e"
+Template: "455a3e98-a627-4b40-8035-e683a20185cc"
+Path: /sitecore/templates/Project/Adnoc/Components/Accordion/Content/heading
+SharedFields:
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Single-Line Text
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

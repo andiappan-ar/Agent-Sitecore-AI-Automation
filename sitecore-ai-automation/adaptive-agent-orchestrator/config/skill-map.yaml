@@ -1,0 +1,93 @@
+# Skill-to-Context Mapping (v2 — focused skills)
+# Maps each workflow's nodes to individual skill files.
+# Paths are relative to sitecore-ai-automation/ (parent directory).
+
+preflight:
+  load-skills:
+    skills:
+      - skills/workflows/preflight.md
+      - skills/access/authoring-graphql.md
+      - skills/common-mistakes.md
+    samples: []
+
+environment-discovery:
+  load-skills:
+    skills:
+      - skills/workflows/environment-discovery.md
+      - skills/access/authoring-graphql.md
+    samples: []
+
+create-component:
+  load-skills:
+    skills:
+      - skills/serialization/template-root.md
+      - skills/serialization/field-section.md
+      - skills/serialization/field-item.md
+      - skills/serialization/standard-values.md
+      - skills/serialization/rendering-definition.md
+      - skills/serialization/cross-file-rules.md
+      - skills/knowledge/system-guids.md
+      - skills/common-mistakes.md
+    samples:
+      - examples/template-yaml/Accordions/AccordionBlock.yml
+      - examples/template-yaml/Accordions/AccordionBlock/Accordion/heading.yml
+      - examples/template-yaml/Accordions/AccordionBlock/Accordion/description.yml
+      - examples/template-yaml/Accordions/AccordionBlock/__Standard Values.yml
+      - examples/rendering-yaml/Accordions.yml
+
+create-page:
+  load-skills:
+    skills:
+      - skills/content/page-creation.md
+      - skills/content/datasource-creation.md
+      - skills/content/renderings-xml.md
+      - skills/knowledge/system-guids.md
+      - skills/knowledge/path-conventions.md
+      - skills/common-mistakes.md
+    samples: []
+
+deploy:
+  load-skills:
+    skills:
+      - skills/access/cli-commands.md
+      - skills/access/authoring-graphql.md
+      - skills/common-mistakes.md
+    samples: []
+
+fix-agent:
+  load-skills:
+    skills:
+      - skills/serialization/cross-file-rules.md
+      - skills/knowledge/system-guids.md
+      - skills/common-mistakes.md
+    samples:
+      - examples/template-yaml/Accordions/AccordionBlock.yml
+      - examples/template-yaml/Accordions/AccordionBlock/__Standard Values.yml
+
+full-pipeline:
+  load-skills:
+    skills:
+      - skills/scrapper/extraction.md
+      - skills/scrapper/generation-rules.md
+      - skills/serialization/template-root.md
+      - skills/knowledge/system-guids.md
+      - skills/knowledge/path-conventions.md
+      - skills/common-mistakes.md
+    samples: []
+
+# Component development workflows
+react-component:
+  load-skills:
+    skills:
+      - skills/component/react-sitecore-patterns.md
+      - skills/common-mistakes.md
+    samples: []
+
+scrape-website:
+  load-skills:
+    skills:
+      - skills/scrapper/extraction.md
+      - skills/scrapper/generation-rules.md
+      - skills/scrapper/validation.md
+      - skills/scrapper/fix-loop.md
+    samples: []

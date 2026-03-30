@@ -1,0 +1,242 @@
+[
+  {
+    "name": "adnocgas",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas",
+    "itemId": "e89446e9e916420abaa8ba53977ce9a3",
+    "template": "Rendering Folder"
+  },
+  {
+    "name": "Accordion",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Accordion",
+    "itemId": "7ec34c9f1de748b0a0738915485d4d55",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "AccordionFAQ",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/AccordionFAQ",
+    "itemId": "d6cf35dab58b40cc8fbd90dc1b6b0fb1",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "AnnouncementCarousel",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/AnnouncementCarousel",
+    "itemId": "684b729c7a5c4c0e93bcdbcf52c36f62",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "ArticlesListing",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/ArticlesListing",
+    "itemId": "e1456e07296249ffb64b6b0af4bfcd5a",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "BoardMembers",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/BoardMembers",
+    "itemId": "557d3ed02cc94902a0237e2d91ecb8fe",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "Breadcrumb",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Breadcrumb",
+    "itemId": "9fb62639c7174b6a9d643546d3090cda",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "CardGrid",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/CardGrid",
+    "itemId": "49efa383672a4efc9a157469dd8dad90",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "Carousel",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Carousel",
+    "itemId": "fb52d618c7114b7cbcc395e9977142e1",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "ColumnsGrid",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/ColumnsGrid",
+    "itemId": "4a9d9ba728fa4eb493ba2df9d16d8f7f",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "ContentBlock",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/ContentBlock",
+    "itemId": "c0908def67b040429dac2327db830a36",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "ContentSection",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/ContentSection",
+    "itemId": "e46f18f84a1341e5975768100a011985",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "CTAImageCard",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/CTAImageCard",
+    "itemId": "746995b988294472b20ff3ae680ca996",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "FinancialCalendar",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/FinancialCalendar",
+    "itemId": "d049799ff3e943ebafc2f29b3b0c17b8",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "Footer",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Footer",
+    "itemId": "51986d617cb047aba3ee8bef43f95357",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "FullMedia",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/FullMedia",
+    "itemId": "d300ab42a1ab4262addaf14bae9902ef",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "Header",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Header",
+    "itemId": "fbd7f2aed0b246a591740e30da28c985",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "HeroCentered",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/HeroCentered",
+    "itemId": "99e40b86b568433884150eb008a08a99",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "HeroHomepage",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/HeroHomepage",
+    "itemId": "6c82126efbc1497dbea3076c1194053f",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "HeroInner",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/HeroInner",
+    "itemId": "5eda3d174d82470191a8289f3cd68cc1",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "HeroVideo",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/HeroVideo",
+    "itemId": "24019203b38d45a7b9dab0965c7676ac",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "ImageDescBelow",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/ImageDescBelow",
+    "itemId": "8f0621b1a3f74b7f99eb141f8a945e9e",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "ImageDescription",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/ImageDescription",
+    "itemId": "565ef48560294382914d99d34ba16be6",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "ImageDescriptionReverse",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/ImageDescriptionReverse",
+    "itemId": "792dd6691ee84e96b3f1291a151a80df",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "InnovationSlider",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/InnovationSlider",
+    "itemId": "c907d5bccd5845e4b68bd4161ded6c11",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "NewsCards",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/NewsCards",
+    "itemId": "18dc34304b8b450ba0cbaecf520eff6a",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "PartnerCarousel",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/PartnerCarousel",
+    "itemId": "e2868783bc8d4adb97dc89b25b89630f",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "PropsColumns",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/PropsColumns",
+    "itemId": "b47ae676a23743cfab1309b7100a1f0b",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "ScrollIndicator",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/ScrollIndicator",
+    "itemId": "c55904b76c854dfab26d387043220cfc",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "Sidebar",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Sidebar",
+    "itemId": "e478fe4596be4a12a8d5210b121010ec",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "SimpleContent",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/SimpleContent",
+    "itemId": "7e437120ecd042519e968242dab339dd",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "SplitContent",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/SplitContent",
+    "itemId": "4876fdc1fa2349dcb429de44177a16d3",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "Stats",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Stats",
+    "itemId": "c3464d89d48e4732b6a522ccd7e7c79a",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "StockTicker",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/StockTicker",
+    "itemId": "e8597458baa94b448439fca9dc768328",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "StorySection",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/StorySection",
+    "itemId": "caf0736b80094a1188e85bf8167b4b93",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "TwoColumnDark",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/TwoColumnDark",
+    "itemId": "802bf9f5eb6040a0be6528cee6a4810d",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "TwoColumnSection",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/TwoColumnSection",
+    "itemId": "83679478ede54d168915940c89b6f4d7",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "TwoColumnText",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/TwoColumnText",
+    "itemId": "8125f78521464dcd93268cfd4223ede8",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "VideoPopup",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/VideoPopup",
+    "itemId": "b7722b672be54963821e0da2c4d2e27b",
+    "template": "Json Rendering"
+  },
+  {
+    "name": "VideoSection",
+    "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/VideoSection",
+    "itemId": "4509921b6e874efdabe2145170d9a524",
+    "template": "Json Rendering"
+  }
+]

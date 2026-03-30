@@ -1,0 +1,23 @@
+---
+ID: "0e3d497b-bfd0-4330-82f6-646587e577b9"
+Parent: "cd0cc7d3-a4a0-4867-b04d-bf735412b979"
+Template: "cd0cc7d3-a4a0-4867-b04d-bf735412b979"
+Path: "/sitecore/templates/Project/Adnoc/Components/adnocgas/HeroHomepage/__Standard Values"
+SharedFields:
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{A053ED9F-4099-4682-9411-2B4C98E481E4}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: ""
+- ID: "04bf00db-f5fb-41f7-8ab7-22408372deb6"
+  Hint: __Final Renderings
+  Value: ""
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20260330T120000Z"

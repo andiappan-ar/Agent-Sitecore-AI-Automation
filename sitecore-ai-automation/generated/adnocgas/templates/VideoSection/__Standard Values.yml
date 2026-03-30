@@ -1,0 +1,13 @@
+---
+ID: "f76ee56c-7870-4151-965b-543101984b14"
+Parent: "a6106427-cbf1-40eb-8d54-8378f5f02e23"
+Template: "a6106427-cbf1-40eb-8d54-8378f5f02e23"
+Path: /sitecore/templates/Project/Adnoc/Components/VideoSection/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

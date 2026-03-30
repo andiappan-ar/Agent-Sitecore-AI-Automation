@@ -1,0 +1,20 @@
+---
+ID: "4d3d395f-184f-4f04-85ce-5c912aa4b04a"
+Parent: "12411274-4d5a-4076-853f-a2affcf21d46"
+Template: "455a3e98-a627-4b40-8035-e683a20185cc"
+Path: /sitecore/templates/Project/Adnoc/Components/Breadcrumb/Content/heading
+SharedFields:
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Single-Line Text
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

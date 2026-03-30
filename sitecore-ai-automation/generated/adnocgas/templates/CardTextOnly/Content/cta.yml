@@ -1,0 +1,20 @@
+---
+ID: "0a35aec8-6d38-4d28-bc71-a34938002161"
+Parent: "9e04c372-456a-461d-b878-41fbf1424ada"
+Template: "455a3e98-a627-4b40-8035-e683a20185cc"
+Path: /sitecore/templates/Project/Adnoc/Components/CardTextOnly/Content/cta
+SharedFields:
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: General Link
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

@@ -1,0 +1,13 @@
+---
+ID: "3a457912-bb14-48f2-9658-b87dee22c97c"
+Parent: "c5bb8d81-75eb-4ea6-a4cc-c89b121614fc"
+Template: "c5bb8d81-75eb-4ea6-a4cc-c89b121614fc"
+Path: /sitecore/templates/Project/Adnoc/Components/SplitContent/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

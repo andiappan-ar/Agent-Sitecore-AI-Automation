@@ -1,0 +1,17 @@
+{
+  "$schema": "https://langchain-ai.github.io/langgraph/reference/cli/",
+  "dependencies": [
+    "langchain-claude-code",
+    "langgraph",
+    "pyyaml"
+  ],
+  "graphs": {
+    "preflight": "./graphs/preflight.py:build_preflight_graph",
+    "create_component": "./graphs/create_component.py:build_create_component_graph",
+    "create_page": "./graphs/create_page.py:build_create_page_graph",
+    "deploy": "./graphs/deploy.py:build_deploy_graph",
+    "full_pipeline": "./graphs/full_pipeline.py:build_full_pipeline_graph",
+    "fix_agent": "./graphs/fix_agent.py:build_fix_agent_graph"
+  },
+  "env": ".env"
+}

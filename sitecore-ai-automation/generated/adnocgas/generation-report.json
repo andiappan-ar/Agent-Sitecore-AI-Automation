@@ -1,0 +1,106 @@
+[
+  {
+    "name": "Accordion",
+    "type": "accordion",
+    "variant": "default",
+    "fields": 2,
+    "templateId": "4cc09a6f-7906-4b8a-8151-a23a4029cf0c",
+    "renderingId": "cd8f93d8-4a4d-43e7-bc15-510c9590377c"
+  },
+  {
+    "name": "Breadcrumb",
+    "type": "breadcrumb",
+    "variant": "default",
+    "fields": 1,
+    "templateId": "5acc918b-718c-4407-b6cf-792f86ccf84a",
+    "renderingId": "f5f981f5-5de9-45a0-8758-1e728b6c4ebe"
+  },
+  {
+    "name": "CardTextOnly",
+    "type": "card-grid",
+    "variant": "card-text-only",
+    "fields": 3,
+    "templateId": "c14a5f9b-1566-47f5-a89d-ec29305ff3b1",
+    "renderingId": "689ebfd5-61c5-4353-8f1c-c06169d9acd4"
+  },
+  {
+    "name": "Carousel",
+    "type": "carousel",
+    "variant": "default",
+    "fields": 3,
+    "templateId": "d78802db-9b04-4891-8785-4049a285e766",
+    "renderingId": "17434b84-1f41-4dc4-9589-70704728e236"
+  },
+  {
+    "name": "ContentSection",
+    "type": "content-section",
+    "variant": "default",
+    "fields": 1,
+    "templateId": "f6a0ddbe-8e98-4625-be31-781c75974359",
+    "renderingId": "ca26327e-57a1-4657-9dfd-0ad9e22ceee6"
+  },
+  {
+    "name": "MultiColumn",
+    "type": "footer",
+    "variant": "multi-column",
+    "fields": 4,
+    "templateId": "97dc9b11-2010-4a68-997f-5e4c9435d74e",
+    "renderingId": "6dd587b4-0134-4055-8461-c921ce8cd39d"
+  },
+  {
+    "name": "StickyTransparentMega",
+    "type": "header",
+    "variant": "sticky-transparent-mega",
+    "fields": 3,
+    "templateId": "d516d683-6803-45cc-a8a9-80d1450cdb9b",
+    "renderingId": "2dfd5652-8110-47cb-985e-a2c96df3cbd5"
+  },
+  {
+    "name": "HeroCentered",
+    "type": "hero",
+    "variant": "hero-centered",
+    "fields": 4,
+    "templateId": "b147dcf6-9c72-40f4-8689-74c25c82492a",
+    "renderingId": "f56761d1-9366-40ce-8a5e-1a0a37a39b8b"
+  },
+  {
+    "name": "HeroVideo",
+    "type": "hero",
+    "variant": "hero-video",
+    "fields": 5,
+    "templateId": "dd4b1514-9e9d-44c8-88d9-ea61acda2152",
+    "renderingId": "73e1263f-5504-491d-af9c-aa92263837bc"
+  },
+  {
+    "name": "Sidebar",
+    "type": "sidebar",
+    "variant": "default",
+    "fields": 0,
+    "templateId": "28828a9a-6ffd-4c70-8f45-2427aa3f9f5b",
+    "renderingId": "d9b47e7b-0ee4-42be-b7e8-4f9dd5df5aef"
+  },
+  {
+    "name": "SplitContent",
+    "type": "split-content",
+    "variant": "default",
+    "fields": 2,
+    "templateId": "c5bb8d81-75eb-4ea6-a4cc-c89b121614fc",
+    "renderingId": "8be5c773-086e-42b2-aefe-bde9d63a7bfb"
+  },
+  {
+    "name": "Stats",
+    "type": "stats",
+    "variant": "default",
+    "fields": 2,
+    "templateId": "0b6d2241-08ef-4615-ad8e-bb50619973a5",
+    "renderingId": "c3703814-d7da-497b-ac90-d5b787471bc3"
+  },
+  {
+    "name": "VideoSection",
+    "type": "video-section",
+    "variant": "default",
+    "fields": 0,
+    "templateId": "a6106427-cbf1-40eb-8d54-8378f5f02e23",
+    "renderingId": "c7e74083-b89a-406f-becb-7a43d31bea90"
+  }
+]

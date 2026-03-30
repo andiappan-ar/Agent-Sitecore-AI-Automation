@@ -1,0 +1,17 @@
+{
+  "activeEnvironment": "local-docker",
+  "environments": {
+    "local-docker": {
+      "type": "local-docker",
+      "name": "Local Docker Dev",
+      "cmHost": "https://xmcloudcm.localhost",
+      "authoringApi": "https://xmcloudcm.localhost/sitecore/api/authoring/graphql/v1",
+      "edgeApi": "https://xmcloudcm.localhost/sitecore/api/graph/edge",
+      "repoRoot": "<YOUR_REPO_ROOT>/xmcloud",
+      "tokenSource": "user.json",
+      "userJsonPath": "<YOUR_REPO_ROOT>/xmcloud/.sitecore/user.json",
+      "apiKey": "<YOUR_API_KEY>",
+      "curlFlags": "-k"
+    }
+  }
+}

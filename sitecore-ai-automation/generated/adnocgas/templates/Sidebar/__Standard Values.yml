@@ -1,0 +1,13 @@
+---
+ID: "34177398-a42e-4773-8ad1-27db7c1b0d68"
+Parent: "28828a9a-6ffd-4c70-8f45-2427aa3f9f5b"
+Template: "28828a9a-6ffd-4c70-8f45-2427aa3f9f5b"
+Path: /sitecore/templates/Project/Adnoc/Components/Sidebar/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

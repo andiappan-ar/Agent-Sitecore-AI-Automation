@@ -1,0 +1,32 @@
+---
+ID: "7f1aa233-10be-4beb-a5d9-ca0f89b60466"
+Parent: "{{RENDERING_FOLDER_ID}}"
+Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
+Path: "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/HeroHomepage"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/elements3.png
+- ID: "1845a951-d5b6-4a68-9ffb-41620125aaee"
+  Hint: Component Name
+  Value: "HeroHomepage"
+- ID: "b5b27af1-25ef-4e75-94e2-8274d8c1e4cd"
+  Hint: Datasource Location
+  Value: "query:./ancestor-or-self::*[@@templateid='{2DC3AF7B-E9A5-44AD-A6E4-38069B5FFDDE}']/Data/HeroHomepage"
+- ID: "1a7c85e5-dc0b-4b1d-9b6e-5e5e5e5e5e5e"
+  Hint: Datasource Template
+  Value: "cd0cc7d3-a4a0-4867-b04d-bf735412b979"
+- ID: "a77e4e48-05f0-4c04-8a6b-3e3a0366b590"
+  Hint: Rendering CSS Class
+  Value: ""
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20260330T120000Z"

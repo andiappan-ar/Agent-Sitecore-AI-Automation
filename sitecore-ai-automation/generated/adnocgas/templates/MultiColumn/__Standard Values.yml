@@ -1,0 +1,13 @@
+---
+ID: "1100f819-bd31-4411-98a1-dd475ff07c88"
+Parent: "97dc9b11-2010-4a68-997f-5e4c9435d74e"
+Template: "97dc9b11-2010-4a68-997f-5e4c9435d74e"
+Path: /sitecore/templates/Project/Adnoc/Components/MultiColumn/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

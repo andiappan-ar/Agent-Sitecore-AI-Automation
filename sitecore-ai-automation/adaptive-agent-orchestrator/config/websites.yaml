@@ -1,0 +1,12 @@
+# Registered websites for orchestration
+# Each website tracks its own state in state/websites/{name}.state.json
+
+websites:
+  adnocgas:
+    url: https://www.adnocgas.ae
+    collection: Adnoc
+    site: adnocgas
+    languages:
+      - en
+      - ar-AE
+    environment: local-docker

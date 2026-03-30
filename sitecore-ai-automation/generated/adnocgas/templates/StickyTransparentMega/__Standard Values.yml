@@ -1,0 +1,13 @@
+---
+ID: "5fe0e21b-44c1-412a-8fb0-c4c36016aa93"
+Parent: "d516d683-6803-45cc-a8a9-80d1450cdb9b"
+Template: "d516d683-6803-45cc-a8a9-80d1450cdb9b"
+Path: /sitecore/templates/Project/Adnoc/Components/StickyTransparentMega/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

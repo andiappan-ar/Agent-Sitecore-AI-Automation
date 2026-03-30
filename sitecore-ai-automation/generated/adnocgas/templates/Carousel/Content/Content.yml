@@ -1,0 +1,13 @@
+---
+ID: "19f312e8-5fd5-46cf-aa5c-203612fb79f1"
+Parent: "d78802db-9b04-4891-8785-4049a285e766"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Project/Adnoc/Components/Carousel/Content
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

@@ -1,0 +1,13 @@
+---
+ID: "836f1adb-d08e-4e56-b1b7-aea9dac558a9"
+Parent: "c14a5f9b-1566-47f5-a89d-ec29305ff3b1"
+Template: "c14a5f9b-1566-47f5-a89d-ec29305ff3b1"
+Path: /sitecore/templates/Project/Adnoc/Components/CardTextOnly/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

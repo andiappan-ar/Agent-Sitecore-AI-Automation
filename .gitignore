@@ -1,0 +1,67 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+*.deploysecret.config
+.sitecore/user.json
+
+# Build outputs
+.next/
+dist/
+out/
+build/
+
+# IDE
+.vscode/
+.vs/
+.idea/
+.cursor/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Sitecore
+*.itempackage
+*.sicpackage
+.scindex
+.sitecore/package-cache/
+
+# Claude Code local settings
+.claude/
+
+# Machine-specific config (contains API keys and local paths)
+sitecore-ai-automation/config/environments.json
+
+# Orchestrator state
+sitecore-ai-automation/adaptive-agent-orchestrator/state/checkpoints/
+sitecore-ai-automation/adaptive-agent-orchestrator/state/websites/*.state.json
+sitecore-ai-automation/adaptive-agent-orchestrator/state/memory.json
+
+# Scrapper output & deps
+sitecore-ai-automation/scrapper/node_modules/
+sitecore-ai-automation/scrapper/output/
+
+# Reference projects (large, external codebases)
+sitecore-ai-automation/Reference projects/
+
+# xmcloud has its own repo - include as subfolder but respect its gitignore
+xmcloud/.git/
+xmcloud/node_modules/
+xmcloud/.next/
+xmcloud/examples/*/node_modules/
+xmcloud/examples/*/.next/
+xmcloud/.sitecore/package-cache/
+
+# Logs
+*.log

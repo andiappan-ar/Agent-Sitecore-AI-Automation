@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-03-28T16:10:00Z",
+  "site": "adnocgas",
+  "collection": "Adnoc",
+  "templateRoot": "38dc056b080549bc8fe9f94716179b11",
+  "templateSiteFolder": "d6ebbd77b9004f6fb39320d26ab9cd05",
+  "renderingsRoot": "ac0a0801e8744483841fabe1a6746c04",
+  "renderingSiteFolder": "e89446e9e916420abaa8ba53977ce9a3",
+  "templates": {
+    "HeroCentered": { "id": "3b7217d269de4b179c2ca7d7d7c26d9b", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/HeroCentered" },
+    "HeroVideo": { "id": "d4b3c51e36784cbd84d2e0aab3be8c59", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/HeroVideo" },
+    "Header": { "id": "a08f7dba7c3f4893818e9e75ee073359", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/Header" },
+    "Footer": { "id": "cf5cbea0f6ef463c9673e35fd200d451", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/Footer" },
+    "Breadcrumb": { "id": "a5ec0e543aaa4562b3aafa4792e50859", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/Breadcrumb" },
+    "SplitContent": { "id": "9b675f0bfc4049ad96572c778b653e49", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/SplitContent" },
+    "ContentSection": { "id": "f04b7bdc079d45dc85c1d862d4d1cf39", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/ContentSection" },
+    "Stats": { "id": "9fd657b8b7f2486ab6494f45321fe128", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/Stats" },
+    "CardGrid": { "id": "50cef7b9862f4ca390ce2e3ee6b48c80", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/CardGrid" },
+    "Carousel": { "id": "6adc31c81b6947458a50929274b24347", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/Carousel" },
+    "Accordion": { "id": "9682c7f43c3c4e65a5fbed7df924867d", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/Accordion" },
+    "VideoSection": { "id": "3260c7939a854d27a0c9e90edf1f656d", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/VideoSection" },
+    "Sidebar": { "id": "9253b0d74115420a8350065d71df9af6", "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas/Sidebar" }
+  },
+  "renderings": {
+    "HeroCentered": { "id": "99e40b86b568433884150eb008a08a99", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/HeroCentered" },
+    "HeroVideo": { "id": "24019203b38d45a7b9dab0965c7676ac", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/HeroVideo" },
+    "Header": { "id": "fbd7f2aed0b246a591740e30da28c985", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Header" },
+    "Footer": { "id": "51986d617cb047aba3ee8bef43f95357", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Footer" },
+    "Breadcrumb": { "id": "9fb62639c7174b6a9d643546d3090cda", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Breadcrumb" },
+    "SplitContent": { "id": "4876fdc1fa2349dcb429de44177a16d3", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/SplitContent" },
+    "ContentSection": { "id": "e46f18f84a1341e5975768100a011985", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/ContentSection" },
+    "Stats": { "id": "c3464d89d48e4732b6a522ccd7e7c79a", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Stats" },
+    "CardGrid": { "id": "49efa383672a4efc9a157469dd8dad90", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/CardGrid" },
+    "Carousel": { "id": "fb52d618c7114b7cbcc395e9977142e1", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Carousel" },
+    "Accordion": { "id": "7ec34c9f1de748b0a0738915485d4d55", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Accordion" },
+    "VideoSection": { "id": "4509921b6e874efdabe2145170d9a524", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/VideoSection" },
+    "Sidebar": { "id": "e478fe4596be4a12a8d5210b121010ec", "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas/Sidebar" }
+  }
+}

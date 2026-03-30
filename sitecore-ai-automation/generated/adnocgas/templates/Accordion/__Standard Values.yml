@@ -1,0 +1,13 @@
+---
+ID: "11d64902-ec09-4d71-8fed-f65f3b9f5285"
+Parent: "4cc09a6f-7906-4b8a-8151-a23a4029cf0c"
+Template: "4cc09a6f-7906-4b8a-8151-a23a4029cf0c"
+Path: /sitecore/templates/Project/Adnoc/Components/Accordion/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134524Z

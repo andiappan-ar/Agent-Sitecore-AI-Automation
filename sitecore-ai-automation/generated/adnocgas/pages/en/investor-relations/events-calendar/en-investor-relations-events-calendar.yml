@@ -1,0 +1,19 @@
+---
+ID: "320e2ef1-2b35-4aa0-9c58-4294ca817d9e"
+Parent: "1e9172ebb66d4e1eb765cdcea66fa65a"
+Template: "47151711-26ca-434e-8132-d3e0b7d26683"
+Path: /sitecore/content/Adnoc/adnocgas/Home/investor-relations/events-calendar
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T134619Z
+    - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+      Hint: Title  
+      Value: "Events Calendar"
+    - ID: "ca3f86a2-4a1c-4d78-b63d-91c2779c1b5f"
+      Hint: NavigationTitle
+      Value: "En Investor Relations Events Calendar"
