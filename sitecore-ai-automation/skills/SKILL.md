@@ -33,7 +33,8 @@ Entry point for all skills. Each skill is focused on ONE task, designed for the 
 ### Component Development (React + Sitecore)
 | Skill | File | Use when |
 |---|---|---|
-| React Sitecore Patterns | `component/react-sitecore-patterns.md` | Building React components for XM Cloud |
+| React Sitecore Patterns | `component/react-sitecore-patterns.md` | Building React components for XM Cloud (flat fields + datasource patterns) |
+| Component Registration | `component/component-registration.md` | Registering components in rendering host component map |
 | Figma to React | `component/figma-to-react.md` | Converting Figma designs to React |
 | Chrome to React | `component/chrome-to-react.md` | Extracting live site design to React |
 
@@ -56,6 +57,8 @@ Entry point for all skills. Each skill is focused on ONE task, designed for the 
 |---|---|---|
 | Preflight | `workflows/preflight.md` | Before any Sitecore operation |
 | Environment Discovery | `workflows/environment-discovery.md` | Auditing what's in Sitecore |
+| React to Sitecore Component | `workflows/react-to-sitecore-component.md` | Transforming scraped React → Content SDK TSX |
+| Layout Migration | `workflows/layout-migration.md` | Migrating design system to rendering host |
 
 ### Legacy (full reference — use only when specific skills are insufficient)
 | Skill | File | Note |

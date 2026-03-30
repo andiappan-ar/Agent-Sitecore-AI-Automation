@@ -1,7 +1,44 @@
 # Skill: React Sitecore Content SDK Component Patterns
 
 Exact patterns for building React components that work with Sitecore XM Cloud.
-Based on the working CBRE project.
+Based on the working adnocgas components in `xmcloud/examples/basic-nextjs/src/components/adnocgas/`.
+
+## Two Field Access Patterns
+
+Sitecore XM Cloud has two valid field access patterns depending on how the component is configured:
+
+### Pattern A: Flat Fields (our adnocgas components use this)
+Fields are passed directly on `props.fields`. Used when components receive fields from the layout service without a GraphQL datasource query.
+
+```typescript
+interface HeroFields {
+  Heading?: TextField;
+  Description?: RichTextField;
+  BackgroundImage?: ImageField;
+}
+// Access: fields.Heading, fields.Description
+```
+
+### Pattern B: Datasource Fields (kit starters like product-listing use this)
+Fields come through `fields.data.datasource` when using component-level GraphQL queries.
+
+```typescript
+interface AccordionFields {
+  fields: {
+    data: {
+      datasource?: {
+        heading: { jsonValue: Field<string> };
+        description?: { jsonValue: Field<string> };
+      };
+    };
+  };
+}
+// Access: fields.data.datasource.heading.jsonValue
+```
+
+**Our project uses Pattern A.** The kit starters use Pattern B. Match the pattern to the component query configuration.
+
+---
 
 ## Imports
 
@@ -13,82 +50,102 @@ import { type JSX } from 'react';
 import {
   Text,           // Render text fields (editable in Experience Editor)
   RichText,       // Render HTML content fields
-  Link as ContentSdkLink,     // Render link fields
-  NextImage as ContentSdkImage, // Render image fields
+  NextImage as ContentSdkImage, // Render image fields (supports editing + next/image)
   TextField,      // Type for text fields
+  RichTextField,  // Type for rich text fields
   LinkField,      // Type for link fields
   ImageField,     // Type for image fields
-  Field,          // Generic field type
   useSitecore,    // Hook to get page context (editing mode, etc.)
 } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from '@/lib/component-props';
+import { ComponentProps } from 'lib/component-props';
 ```
 
-## Component Structure
+**CRITICAL**: Import from `'lib/component-props'` (NOT `'@/lib/component-props'`). Our basic-nextjs uses the `lib/` path alias without `@`.
+
+## Component Structure (Pattern A — Our Standard)
 
 ```typescript
-// 1. Define field interfaces
-interface MyComponentFields {
-  heading?: TextField;
-  bodyText?: TextField;
-  backgroundImage?: ImageField;
-  ctaLink?: LinkField;
-  ctaLabel?: TextField;
+'use client';
+
+import type React from 'react';
+import { type JSX } from 'react';
+import {
+  NextImage as ContentSdkImage, ImageField,
+  Text, TextField, RichText, RichTextField,
+  LinkField, useSitecore,
+} from '@sitecore-content-sdk/nextjs';
+import { ComponentProps } from 'lib/component-props';
+
+// ─── Props ──────────────────────────────────────────────────────────────────────
+
+interface MyComponentParams {
+  [key: string]: string;
 }
 
-// 2. Define props (extends ComponentProps)
-interface MyComponentProps extends ComponentProps {
-  params: { [key: string]: any };
+export interface MyComponentFields {
+  Heading?: TextField;
+  Description?: RichTextField;
+  BackgroundImage?: ImageField;
+  CtaLabel?: TextField;
+  CtaLink?: LinkField;
+}
+
+export interface MyComponentProps extends ComponentProps {
+  params: MyComponentParams;
   fields: MyComponentFields;
+  isPageEditing?: boolean;
 }
 
-// 3. Export as named `Default` (NEVER default export)
-export const Default: React.FC<MyComponentProps> = (props) => {
-  const { fields, params } = props;
-  const { page } = useSitecore();
-  const isEditing = page?.mode?.isEditing ?? false;
+// ─── Default Variant ────────────────────────────────────────────────────────────
+
+const MyComponentDefault = (
+  props: MyComponentProps & { isPageEditing?: boolean }
+): JSX.Element => {
+  const { fields, isPageEditing, params } = props;
   const id = params?.RenderingIdentifier;
 
-  // 4. Guard: no data fallback
+  // Guard: no data fallback
   if (!fields) {
-    return <div className="is-empty-hint">MyComponent</div>;
+    return (
+      <section className="component my-component" id={id}>
+        <div className="component-content">
+          <span className="is-empty-hint">MyComponent</span>
+        </div>
+      </section>
+    );
   }
 
-  // 5. Safe destructuring
-  const { heading, bodyText, backgroundImage, ctaLink, ctaLabel } = fields || {};
+  const { Heading, Description, BackgroundImage, CtaLabel, CtaLink } = fields || {};
 
   return (
-    <section data-component="MyComponent" id={id} className="w-full">
-      {/* 6. Conditional rendering with edit mode */}
-      {(heading?.value || isEditing) && (
-        <Text tag="h2" field={heading} />
+    <section data-component="MyComponent" id={id ? id : undefined} className="w-full">
+      {(Heading?.value || isPageEditing) && (
+        <Text field={Heading} tag="h2" className="text-[32px] font-[700]" />
       )}
-
-      {(bodyText?.value || isEditing) && (
-        <RichText field={bodyText} />
+      {(Description?.value || isPageEditing) && (
+        <RichText field={Description} className="text-[16px]" />
       )}
-
-      {/* 7. Image with spread pattern */}
-      {backgroundImage?.value?.src && (
+      {(BackgroundImage?.value?.src || isPageEditing) && (
         <ContentSdkImage
           field={{
-            ...backgroundImage,
+            ...BackgroundImage,
             value: {
-              ...backgroundImage.value,
-              style: { width: '100%', height: 'auto' },
+              ...BackgroundImage?.value,
+              style: { width: '100%', height: 'auto', objectFit: 'cover' },
             },
           }}
         />
       )}
-
-      {/* 8. Link with guard */}
-      {(ctaLink?.value?.href || isEditing) && (
-        <ContentSdkLink field={ctaLink}>
-          <Text tag="span" field={ctaLabel} />
-        </ContentSdkLink>
-      )}
     </section>
   );
+};
+
+// ─── Exported Variants ──────────────────────────────────────────────────────────
+
+export const Default: React.FC<MyComponentProps> = (props) => {
+  const { page } = useSitecore();
+  const isEditing = page?.mode?.isEditing ?? false;
+  return <MyComponentDefault {...props} isPageEditing={isEditing} />;
 };
 ```
 
@@ -97,132 +154,149 @@ export const Default: React.FC<MyComponentProps> = (props) => {
 ### 1. Always `'use client'`
 First line of every component file. Without it, component map generation skips the file.
 
-### 2. Export as `Default` (named export)
+### 2. Named `Default` export (NEVER default export)
 ```typescript
-// CORRECT
-export const Default: React.FC<Props> = (props) => { ... };
+// CORRECT — named export with useSitecore wrapper
+export const Default: React.FC<Props> = (props) => {
+  const { page } = useSitecore();
+  const isEditing = page?.mode?.isEditing ?? false;
+  return <InnerComponent {...props} isPageEditing={isEditing} />;
+};
 
-// WRONG
+// WRONG — default export
 export default function MyComponent(props) { ... };
 ```
 
-### 3. Safe Destructuring
+### 3. Inner component + exported variant pattern
+The actual rendering goes in an inner component (e.g., `HeroDefault`). The exported `Default` just wraps it with `useSitecore()`. This separates editing mode detection from rendering logic.
+
+### 4. Safe Destructuring
 ```typescript
 // CORRECT — won't crash if fields is null
-const { heading, bodyText } = fields || {};
+const { Heading, Description } = fields || {};
 
-// WRONG — crashes if fields.data is null
-const { heading } = fields.data.datasource;
+// WRONG — crashes if fields is null
+const { Heading } = fields;
 ```
 
-### 4. Edit Mode Guards
+### 5. Edit Mode Guards
 Always show fields in editing mode, even if empty:
 ```typescript
-{(heading?.value || isEditing) && <Text tag="h1" field={heading} />}
+{(Heading?.value || isPageEditing) && <Text field={Heading} tag="h1" />}
 ```
 
-### 5. Field Components for Editability
+### 6. Field Components for Editability
 ```typescript
 // CORRECT — editable in Experience Editor
-<Text tag="h1" field={heading} />
+<Text field={Heading} tag="h1" />
 
 // WRONG — not editable
-<h1>{heading?.value}</h1>
+<h1>{Heading?.value}</h1>
 ```
 
-### 6. Image Spread Pattern
-Never pass image field directly — always spread with style:
+### 7. Image Spread Pattern
+Always spread image field with style to control dimensions:
 ```typescript
 <ContentSdkImage
   field={{
-    ...fields.Image,
+    ...BackgroundImage,
     value: {
-      ...fields.Image.value,
-      style: { objectFit: 'cover', width: '100%', height: '100%' },
+      ...BackgroundImage?.value,
+      style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' },
     },
   }}
-  sizes="(max-width: 768px) 100vw, 1200px"
 />
 ```
 
-### 7. Link Guards
-Optional links must be guarded:
+### 8. CTA/Link Pattern
+For links, use separate Label + Link fields (not the Link component wrapper):
 ```typescript
-{ctaLink?.value?.href && !isEditing && (
-  <ContentSdkLink field={ctaLink}>Link Text</ContentSdkLink>
+// Our pattern — CTA as separate label + link fields
+{(CtaLabel?.value || isPageEditing) && (
+  isPageEditing ? (
+    <Text field={CtaLabel} tag="span" className="..." />
+  ) : (
+    <a href={String(CtaLink?.value?.href || '#')} className="...">
+      {String(CtaLabel?.value || '')}
+    </a>
+  )
 )}
 ```
 
-In edit mode, render without the link wrapper:
+### 9. Overlay pointer-events in Edit Mode
 ```typescript
-const Wrapper = isEditing ? 'div' : 'a';
-const wrapperProps = isEditing ? {} : { href: ctaLink?.value?.href || '#' };
+<div
+  className={`absolute inset-0 z-10 ${isPageEditing ? 'pointer-events-none opacity-30' : ''}`}
+  style={{ backgroundColor: 'rgba(0,26,112,0.55)' }}
+/>
 ```
 
-### 8. Fixed Overlays in Edit Mode
+### 10. Stats / Numbered Fields Pattern
+For fixed-count repeated items (e.g., 4 stats), use numbered flat fields:
 ```typescript
-className={isEditing ? 'static' : 'fixed top-0 z-50'}
-style={isEditing ? {} : { pointerEvents: 'none' }}
+const stats = [
+  { title: fields.stat1Title, subtitle: fields.stat1Subtitle },
+  { title: fields.stat2Title, subtitle: fields.stat2Subtitle },
+  { title: fields.stat3Title, subtitle: fields.stat3Subtitle },
+  { title: fields.stat4Title, subtitle: fields.stat4Subtitle },
+];
+
+{stats.map((stat, i) => (
+  <div key={i}>
+    {(stat.title?.value || isPageEditing) && (
+      <Text field={stat.title} tag="div" className="text-[80px] font-[700] text-white" />
+    )}
+  </div>
+))}
 ```
 
 ## Component Map Registration
 
 Components are auto-registered via:
 ```bash
-npx sitecore-tools project component generate-map
+npm run sitecore-tools:generate-map
 ```
 
-This scans for files with `'use client'` and generates:
-- `src/temp/component-map.ts` (server)
-- `src/temp/component-map.client.ts` (client)
+This generates two files:
+- `.sitecore/component-map.ts` — server map with `componentType: 'client'`
+- `.sitecore/component-map.client.ts` — client map
 
-## CBRE Example: CBREAboutSection
-
+**Registration format:**
 ```typescript
-'use client';
-
-import type React from 'react';
-import { Text, TextField, LinkField, useSitecore } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from '@/lib/component-props';
-
-interface CBREAboutSectionFields {
-  bodyText?: TextField;
-  highlightText?: TextField;
-  ctaLabel?: TextField;
-  ctaLink?: LinkField;
-}
-
-interface CBREAboutSectionProps extends ComponentProps {
-  params: { [key: string]: any };
-  fields: CBREAboutSectionFields;
-}
-
-export const Default: React.FC<CBREAboutSectionProps> = (props) => {
-  const { fields, params } = props;
-  const { page } = useSitecore();
-  const isEditing = page?.mode?.isEditing ?? false;
-  const id = params?.RenderingIdentifier;
-
-  if (!fields) {
-    return <div className="is-empty-hint">CBREAboutSection</div>;
-  }
-
-  const { bodyText, highlightText, ctaLabel, ctaLink } = fields || {};
-
-  return (
-    <section data-component="CBREAboutSection" id={id} className="w-full flex justify-center py-14 md:py-20">
-      <div className="w-full max-w-[1440px] px-4 md:px-14">
-        {(bodyText?.value || isEditing) && (
-          <Text tag="span" field={bodyText} className="text-[#003f2d]" />
-        )}
-        {(highlightText?.value || isEditing) && (
-          <Text tag="span" field={highlightText} className="text-[#538184]" />
-        )}
-        {(ctaLabel?.value || isEditing) && (
-          <Text tag="span" field={ctaLabel} />
-        )}
-      </div>
-    </section>
-  );
-};
+import * as Hero from 'src/components/adnocgas/Hero';
+// ...
+export const componentMap = new Map<string, NextjsContentSdkComponent>([
+  ['Hero', { ...Hero, componentType: 'client' }],
+]);
 ```
+
+**The map key MUST match the Sitecore rendering Component Name field exactly.**
+
+## File Placement
+
+All adnocgas components go in:
+```
+xmcloud/examples/basic-nextjs/src/components/adnocgas/
+├── Hero.tsx
+├── HeroHomepage.tsx
+├── Header.tsx
+├── Footer.tsx
+├── Accordion.tsx
+├── ... (one file per component)
+```
+
+## Component Header Comment Convention
+
+Every component file starts with a JSDoc comment:
+```typescript
+/**
+ * ComponentName — Short description
+ * Sitecore fields: Field1, Field2, Field3
+ * Template: TemplateName ({templateGuid})
+ * Rendering: RenderingName ({renderingGuid})
+ */
+```
+
+## Reference: Working adnocgas HeroHomepage
+
+See `xmcloud/examples/basic-nextjs/src/components/adnocgas/HeroHomepage.tsx` for the canonical example of our component pattern.

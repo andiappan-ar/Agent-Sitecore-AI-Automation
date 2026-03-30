@@ -77,3 +77,37 @@ Known gotchas learned from real projects. Apply these EVERY time.
 15. **Token expired**
     - Symptom: 401 errors on GraphQL
     - Fix: `dotnet sitecore cloud login` — tokens valid 24h only
+
+## Component Map / Rendering Host
+
+16. **Component not showing in Page Builder**
+    - Symptom: Component added to page but renders blank or "Unknown component"
+    - Fix: Component map key must EXACTLY match the Sitecore rendering's `Component Name` field
+    - Run `npm run sitecore-tools:generate-map` after adding new components
+
+17. **Using `export default` instead of named `Default` export**
+    - Symptom: Component map generation ignores the component
+    - Fix: Always use `export const Default: React.FC<Props> = ...` — never `export default`
+
+18. **Import path `@/lib/component-props` vs `lib/component-props`**
+    - Symptom: Module not found error
+    - Fix: basic-nextjs uses `'lib/component-props'` (no `@` prefix). Kit starters use `'@/lib/component-props'`. Match the project.
+
+19. **Missing `isPageEditing` prop in inner component**
+    - Symptom: Fields invisible in editing mode when empty
+    - Fix: Exported `Default` must call `useSitecore()` and pass `isPageEditing` to inner component
+
+20. **Confusing flat fields vs datasource fields**
+    - Our adnocgas components use flat: `fields.Heading` (TextField)
+    - Kit starters use datasource: `fields.data.datasource.heading.jsonValue`
+    - They are NOT interchangeable — depends on component query config
+    - Check existing components in the same rendering host before writing new ones
+
+21. **Not running `npm run sitecore-tools:generate-map` after adding components**
+    - Symptom: New component works in dev but not after build/deploy
+    - Fix: Always regenerate map — it creates both `.sitecore/component-map.ts` and `component-map.client.ts`
+
+22. **Portproxy stale after Docker restart (Windows 11)**
+    - Symptom: `curl https://xmcloudcm.localhost` times out but `curl https://<traefik-ip>` works
+    - Fix: Delete and re-add portproxy, or update hosts file to point directly to Traefik IP
+    - Get new Traefik IP: `docker inspect xmcloud-starter-js-traefik-1 --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'`

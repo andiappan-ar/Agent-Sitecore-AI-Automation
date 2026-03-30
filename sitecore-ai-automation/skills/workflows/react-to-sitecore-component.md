@@ -185,27 +185,28 @@ Pipe-delimited: `{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{44A022DB-56D3-419A-B43B
 ### 1. Imports
 ```
 BEFORE: import { useState } from 'react';
-AFTER:  import { Text, Image, RichText, Link, useSitecore } from '@sitecore-content-sdk/nextjs';
+AFTER:  import { Text, NextImage as ContentSdkImage, RichText, TextField, ImageField, LinkField, useSitecore } from '@sitecore-content-sdk/nextjs';
 ```
 
 ### 2. Props Structure
+Our adnocgas components use **flat fields** (not datasource nested):
 ```
 BEFORE (flat props from JSON):
   function Hero({ heading, description, backgroundImage, cta })
 
-AFTER (Sitecore datasource structure):
+AFTER (Sitecore flat field structure):
   function Hero({ fields }: HeroProps)
-  // fields.data.datasource.heading.jsonValue → Field object
+  // fields.Heading is a TextField, access value via fields.Heading?.value
 ```
 
 ### 3. Field Rendering
 | Before (pure React) | After (Sitecore Content SDK) |
 |---|---|
-| `<h1>{heading}</h1>` | `<Text field={datasource?.heading?.jsonValue} tag="h1" />` |
-| `<p>{description}</p>` | `<RichText field={datasource?.description?.jsonValue} />` |
-| `<img src={img} alt={alt} />` | `<Image field={datasource?.backgroundImage?.jsonValue} />` |
-| `<a href={cta.href}>{cta.text}</a>` | `<Link field={datasource?.cta?.jsonValue} />` |
-| `{condition && <div>...</div>}` | `{(value \|\| isEditing) && <Text ... />}` |
+| `<h1>{heading}</h1>` | `<Text field={Heading} tag="h1" />` |
+| `<p>{description}</p>` | `<RichText field={Description} />` |
+| `<img src={img} alt={alt} />` | `<ContentSdkImage field={{ ...BackgroundImage, value: { ...BackgroundImage?.value, style: {...} } }} />` |
+| `<a href={cta.href}>{cta.text}</a>` | CTA Label + Link pattern (see below) |
+| `{condition && <div>...</div>}` | `{(Heading?.value \|\| isPageEditing) && <Text ... />}` |
 
 ### 4. Language (JSX → TSX)
 ```
@@ -215,21 +216,23 @@ AFTER:  Component.tsx (TypeScript with interface)
 
 ### 5. Editing Mode Support
 ```tsx
-const { page } = useSitecore();
-const { isEditing } = page.mode;
+// Exported variant wraps with useSitecore
+export const Default: React.FC<HeroProps> = (props) => {
+  const { page } = useSitecore();
+  const isEditing = page?.mode?.isEditing ?? false;
+  return <HeroDefault {...props} isPageEditing={isEditing} />;
+};
 
-// Show field even when empty in editing mode
-{(datasource?.heading?.jsonValue?.value || isEditing) && (
-  <Text field={datasource?.heading?.jsonValue} tag="h1" />
+// Inner component uses isPageEditing prop
+{(Heading?.value || isPageEditing) && (
+  <Text field={Heading} tag="h1" />
 )}
 ```
 
 ### 6. Safe Destructuring
 ```tsx
-// Always safe — never crash on null
-const { data } = fields || {};
-const { datasource } = data || {};
-const { heading, description, backgroundImage } = datasource || {};
+// Flat fields — always safe with || {}
+const { Heading, Description, BackgroundImage, CtaLabel, CtaLink } = fields || {};
 ```
 
 ---
@@ -242,9 +245,9 @@ const { heading, description, backgroundImage } = datasource || {};
 <h1>{heading}</h1>
 <span>{date}</span>
 
-// After
-<Text field={datasource?.heading?.jsonValue} tag="h1" className="..." />
-<Text field={datasource?.date?.jsonValue} tag="span" className="..." />
+// After (flat fields)
+<Text field={Heading} tag="h1" className="..." />
+<Text field={Date} tag="span" className="..." />
 ```
 
 ### Rich Text → `<RichText>`
@@ -254,35 +257,51 @@ const { heading, description, backgroundImage } = datasource || {};
 <p>{description}</p>  // if plain text, still use RichText for editing
 
 // After
-<RichText field={datasource?.description?.jsonValue} className="..." />
+<RichText field={Description} className="..." />
 ```
 
-### Image → `<Image>`
+### Image → `<ContentSdkImage>` (with spread pattern)
 ```tsx
 // Before
 <img src={backgroundImage} alt="..." className="w-full h-full object-cover" />
 
-// After
-<Image field={datasource?.backgroundImage?.jsonValue} className="w-full h-full object-cover" />
+// After — ALWAYS use spread pattern for image fields
+<ContentSdkImage
+  field={{
+    ...BackgroundImage,
+    value: {
+      ...BackgroundImage?.value,
+      style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' },
+    },
+  }}
+/>
 ```
 
-For background images (CSS):
+For background images (CSS — when image is used as CSS background):
 ```tsx
 // Before
 <div style={{ backgroundImage: `url("${bgImage}")` }} />
 
-// After — Image field needs special handling for bg
-const bgUrl = datasource?.backgroundImage?.jsonValue?.value?.src;
+// After — extract src for CSS usage
+const bgUrl = BackgroundImage?.value?.src;
 <div style={{ backgroundImage: bgUrl ? `url("${bgUrl}")` : 'none' }} />
 ```
 
-### General Link → `<Link>`
+### CTA (Label + Link separate fields)
 ```tsx
 // Before
 <a href={cta.href} className="...">{cta.text}</a>
 
-// After
-<Link field={datasource?.cta?.jsonValue} className="..." />
+// After — our pattern uses separate Label + Link fields
+{(CtaLabel?.value || isPageEditing) && (
+  isPageEditing ? (
+    <Text field={CtaLabel} tag="span" className="..." />
+  ) : (
+    <a href={String(CtaLink?.value?.href || '#')} className="...">
+      {String(CtaLabel?.value || '')}
+    </a>
+  )
+)}
 ```
 
 ### Checkbox → boolean
@@ -291,46 +310,60 @@ const bgUrl = datasource?.backgroundImage?.jsonValue?.value?.src;
 {overlay && <div className="overlay" />}
 
 // After
-{datasource?.overlay?.jsonValue?.value && <div className="overlay" />}
+{Overlay?.value && <div className="overlay" />}
 ```
 
-### Lists/Arrays (Multilist/Treelist) → targetItems
+### Numbered repeated items (fixed count)
 ```tsx
 // Before
-{cards.map((card, i) => <div key={i}>{card.title}</div>)}
+{stats.map((stat, i) => <div key={i}>{stat.value} {stat.label}</div>)}
 
-// After
-{datasource?.cards?.targetItems?.map((card, i) => (
+// After — flat numbered fields
+const stats = [
+  { title: fields.stat1Title, subtitle: fields.stat1Subtitle },
+  { title: fields.stat2Title, subtitle: fields.stat2Subtitle },
+  { title: fields.stat3Title, subtitle: fields.stat3Subtitle },
+  { title: fields.stat4Title, subtitle: fields.stat4Subtitle },
+];
+{stats.map((stat, i) => (
   <div key={i}>
-    <Text field={card.title?.jsonValue} tag="h4" />
+    {(stat.title?.value || isPageEditing) && <Text field={stat.title} tag="div" />}
+    {(stat.subtitle?.value || isPageEditing) && <Text field={stat.subtitle} tag="span" />}
   </div>
 ))}
 ```
 
 ---
 
-## Reference: CBRE Pattern (product-listing rendering host)
+## Reference: Working adnocgas Pattern
 
-The canonical pattern comes from `Reference projects/CBRE.POC-SitecoreAI-main/.../kit-nextjs-product-listing/src/components/`.
+The canonical pattern comes from `xmcloud/examples/basic-nextjs/src/components/adnocgas/`.
 
 Key pattern points:
 - `'use client'` at top
-- `import { ComponentProps } from 'lib/component-props'` (or `@/lib/component-props`)
-- Interface: `interface XxxFields { Heading: TextField; ... }`
-- Props: `interface XxxProps extends ComponentProps { fields: XxxFields; }`
-- Inner component: `const XxxDefault = (props: XxxProps & { isPageEditing?: boolean }) => { ... }`
-- Export: `export const Default: React.FC<XxxProps> = (props) => { const { page } = useSitecore(); ... }`
-- Empty guard: `if (!fields) { return <section><span className="is-empty-hint">Xxx</span></section>; }`
+- JSDoc comment with template/rendering GUIDs
+- `import { ComponentProps } from 'lib/component-props'` (NOT `@/lib/`)
+- Interface: `export interface XxxFields { Heading?: TextField; ... }` (fields optional with `?`)
+- Props: `export interface XxxProps extends ComponentProps { params: XxxParams; fields: XxxFields; isPageEditing?: boolean; }`
+- Inner component: `const XxxDefault = (props: XxxProps & { isPageEditing?: boolean }): JSX.Element => { ... }`
+- Export: `export const Default: React.FC<XxxProps> = (props) => { const { page } = useSitecore(); const isEditing = page?.mode?.isEditing ?? false; return <XxxDefault {...props} isPageEditing={isEditing} />; }`
+- Empty guard: `if (!fields) { return <section className="component xxx" id={id}><div className="component-content"><span className="is-empty-hint">Xxx</span></div></section>; }`
 - Field rendering: `{(Heading?.value || isPageEditing) && <Text field={Heading} tag="h1" className="..." />}`
-- Background images: `const bgUrl = (BackgroundImage?.value as { src?: string })?.src;`
+- Images: ContentSdkImage with spread pattern (never raw `<img>`)
 - `data-component="ComponentName"` on root element
-- `id={params?.RenderingIdentifier}` on root element
+- `id={id ? id : undefined}` on root element (where `id = params?.RenderingIdentifier`)
+
+### Key Reference Files
+- `xmcloud/examples/basic-nextjs/src/components/adnocgas/HeroHomepage.tsx` — hero with stats
+- `xmcloud/examples/basic-nextjs/src/components/adnocgas/Hero.tsx` — hero with video + CTAs
+- `xmcloud/examples/basic-nextjs/src/components/adnocgas/Footer.tsx` — complex numbered fields
+- `xmcloud/examples/basic-nextjs/src/components/adnocgas/Accordion.tsx` — simple content section
 
 ### Tailwind Values
 Keep arbitrary values (`px-[16px]`, `max-w-[1400px]`) from extraction — they match the original site pixel-perfectly. Canonical Tailwind warnings can be ignored for now.
 
 ### Component Map
-The `basic-nextjs` rendering host auto-generates `.sitecore/component-map.ts` from `'use client'` components. No manual registration needed.
+The `basic-nextjs` rendering host auto-generates `.sitecore/component-map.ts` from `'use client'` components via `npm run sitecore-tools:generate-map`. See `skills/component/component-registration.md` for details.
 
 ---
 
@@ -365,64 +398,98 @@ export default function HeroCentered({
 }
 ```
 
-### AFTER (Sitecore Rendering Host Component)
+### AFTER (Sitecore Rendering Host Component — flat fields pattern)
 ```tsx
-import { Text, RichText, Image, Link, useSitecore, Field } from '@sitecore-content-sdk/nextjs';
+'use client';
 
-interface HeroCenteredProps {
-  fields: {
-    data?: {
-      datasource?: {
-        Heading?: { jsonValue?: Field };
-        Subheading?: { jsonValue?: Field };
-        Description?: { jsonValue?: Field };
-        BackgroundImage?: { jsonValue?: Field };
-        Cta?: { jsonValue?: Field };
-      };
-    };
-  };
+import type React from 'react';
+import { type JSX } from 'react';
+import {
+  NextImage as ContentSdkImage, ImageField,
+  Text, TextField, RichText, RichTextField,
+  LinkField, useSitecore,
+} from '@sitecore-content-sdk/nextjs';
+import { ComponentProps } from 'lib/component-props';
+
+interface HeroCenteredParams { [key: string]: string; }
+
+export interface HeroCenteredFields {
+  Heading?: TextField;
+  Subheading?: TextField;
+  Description?: RichTextField;
+  BackgroundImage?: ImageField;
+  CtaLabel?: TextField;
+  CtaLink?: LinkField;
 }
 
-export default function HeroCentered({ fields }: HeroCenteredProps) {
-  const { page } = useSitecore();
-  const { isEditing } = page.mode;
+export interface HeroCenteredProps extends ComponentProps {
+  params: HeroCenteredParams;
+  fields: HeroCenteredFields;
+  isPageEditing?: boolean;
+}
 
-  const { data } = fields || {};
-  const { datasource } = data || {};
-  const { Heading, Subheading, Description, BackgroundImage, Cta } = datasource || {};
+const HeroCenteredDefault = (
+  props: HeroCenteredProps & { isPageEditing?: boolean }
+): JSX.Element => {
+  const { fields, isPageEditing, params } = props;
+  const id = params?.RenderingIdentifier;
 
-  const bgUrl = BackgroundImage?.jsonValue?.value?.src;
+  if (!fields) {
+    return (
+      <section className="component hero-centered" id={id}>
+        <div className="component-content"><span className="is-empty-hint">HeroCentered</span></div>
+      </section>
+    );
+  }
+
+  const { Heading, Subheading, Description, BackgroundImage, CtaLabel, CtaLink } = fields || {};
 
   return (
     <section
+      data-component="HeroCentered"
+      id={id ? id : undefined}
       className="w-full relative min-h-[600px] lg:min-h-[1158px] font-['ADNOC_Sans',sans-serif]"
-      style={{
-        backgroundImage: bgUrl ? `url("${bgUrl}")` : 'none',
-        backgroundColor: '#001a70',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
+      style={{ backgroundColor: '#001a70' }}
     >
-      <div className="absolute inset-0 z-10" style={{ backgroundColor: 'rgba(0,26,112,0.55)' }} />
+      {(BackgroundImage?.value?.src || isPageEditing) && (
+        <ContentSdkImage field={{
+          ...BackgroundImage,
+          value: { ...BackgroundImage?.value, style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' } },
+        }} />
+      )}
+      <div className={`absolute inset-0 z-10 ${isPageEditing ? 'pointer-events-none opacity-30' : ''}`}
+        style={{ backgroundColor: 'rgba(0,26,112,0.55)' }} />
       <div className="relative z-20 w-full max-w-[1400px] mx-auto px-[16px] lg:px-[20px] pt-[120px] lg:pt-[300px] pb-[40px] lg:pb-[48px] flex flex-col justify-end min-h-[600px] lg:min-h-[1158px]">
         <div className="max-w-[900px]">
-          {(Heading?.jsonValue?.value || isEditing) && (
-            <Text field={Heading?.jsonValue} tag="h1" className="text-[40px] lg:text-[100px] font-[700] leading-[1.1] text-white mb-[24px]" />
+          {(Heading?.value || isPageEditing) && (
+            <Text field={Heading} tag="h1" className="text-[40px] lg:text-[100px] font-[700] leading-[1.1] text-white mb-[24px]" />
           )}
-          {(Subheading?.jsonValue?.value || isEditing) && (
-            <Text field={Subheading?.jsonValue} tag="h2" className="text-[20px] lg:text-[40px] font-[700] leading-[1.2] text-white mb-[24px]" />
+          {(Subheading?.value || isPageEditing) && (
+            <Text field={Subheading} tag="h2" className="text-[20px] lg:text-[40px] font-[700] leading-[1.2] text-white mb-[24px]" />
           )}
-          {(Description?.jsonValue?.value || isEditing) && (
-            <RichText field={Description?.jsonValue} className="text-[14px] lg:text-[16px] text-white/90 mb-[24px] max-w-[800px]" />
+          {(Description?.value || isPageEditing) && (
+            <RichText field={Description} className="text-[14px] lg:text-[16px] text-white/90 mb-[24px] max-w-[800px]" />
           )}
-          {(Cta?.jsonValue?.value?.href || isEditing) && (
-            <Link field={Cta?.jsonValue} className="inline-block bg-[#00bfb2] text-[#001a70] text-[16px] font-[700] rounded-full px-[24px] py-[12px] hover:bg-white transition-all duration-300" />
+          {(CtaLabel?.value || isPageEditing) && (
+            isPageEditing ? (
+              <Text field={CtaLabel} tag="span" className="inline-block bg-[#00bfb2] text-[#001a70] text-[16px] font-[700] rounded-full px-[24px] py-[12px]" />
+            ) : (
+              <a href={String(CtaLink?.value?.href || '#')} className="inline-block bg-[#00bfb2] text-[#001a70] text-[16px] font-[700] rounded-full px-[24px] py-[12px] hover:bg-white transition-all duration-300">
+                {String(CtaLabel?.value || '')}
+              </a>
+            )
           )}
         </div>
       </div>
     </section>
   );
-}
+};
+
+export const Default: React.FC<HeroCenteredProps> = (props) => {
+  const { page } = useSitecore();
+  const isEditing = page?.mode?.isEditing ?? false;
+  return <HeroCenteredDefault {...props} isPageEditing={isEditing} />;
+};
 ```
 
 ---

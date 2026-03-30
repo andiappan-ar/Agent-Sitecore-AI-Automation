@@ -80,8 +80,14 @@ react-component:
   load-skills:
     skills:
       - skills/component/react-sitecore-patterns.md
+      - skills/component/component-registration.md
+      - skills/workflows/react-to-sitecore-component.md
       - skills/common-mistakes.md
-    samples: []
+    samples:
+      # Reference working adnocgas components from rendering host
+      - xmcloud/examples/basic-nextjs/src/components/adnocgas/HeroHomepage.tsx
+      - xmcloud/examples/basic-nextjs/src/components/adnocgas/Hero.tsx
+      - xmcloud/examples/basic-nextjs/src/components/adnocgas/Accordion.tsx
 
 scrape-website:
   load-skills:
