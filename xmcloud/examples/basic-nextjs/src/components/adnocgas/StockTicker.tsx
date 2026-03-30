@@ -1,10 +1,18 @@
 'use client';
 
 /**
- * StockTicker — Horizontal stock/financial ticker bar
- * Sitecore fields: TickerName, TickerDate, TickerLastPrice, TickerChange, TickerChangePercent, TickerOpenPrice, TickerPreviousClose, TickerHigh, TickerLow, TickerVolume, TickerMarketCap
- * Template: Stats ({9fd657b8b7f2486ab6494f45321fe128})
- * Rendering: Stats ({c3464d89d48e4732b6a522ccd7e7c79a})
+ * StockTicker -- Horizontal scrolling stock/financial ticker bar
+ *
+ * Template: Stats ({9fd657b8-b7f2-486a-b649-4f45321fe128})
+ *   - Heading  (Single-Line Text)
+ *   - Description  (Rich Text)
+ * Rendering: Stats ({c3464d89-d48e-4732-b6a5-22ccd7e7c79a})
+ * Datasource: ticker-widget
+ *
+ * NOTE: Only Heading and Description are Sitecore-managed fields.
+ * The individual ticker data points (prices, change, volume, etc.) are
+ * live financial data -- kept as static/hardcoded values here since there
+ * are no corresponding Sitecore template fields for them.
  */
 
 import type React from 'react';
@@ -12,28 +20,21 @@ import { type JSX } from 'react';
 import {
   Text,
   TextField,
+  RichText,
+  RichTextField,
   useSitecore,
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 
-// ─── Props ──────────────────────────────────────────────────────────────────────
+// ─── Types ──────────────────────────────────────────────────────────────────────
 
 interface StockTickerParams {
   [key: string]: string;
 }
 
 export interface StockTickerFields {
-  TickerName?: TextField;
-  TickerDate?: TextField;
-  TickerLastPrice?: TextField;
-  TickerChange?: TextField;
-  TickerChangePercent?: TextField;
-  TickerOpenPrice?: TextField;
-  TickerPreviousClose?: TextField;
-  TickerHigh?: TextField;
-  TickerLow?: TextField;
-  TickerVolume?: TextField;
-  TickerMarketCap?: TextField;
+  Heading?: TextField;
+  Description?: RichTextField;
 }
 
 export interface StockTickerProps extends ComponentProps {
@@ -42,11 +43,35 @@ export interface StockTickerProps extends ComponentProps {
   isPageEditing?: boolean;
 }
 
-// ─── Default Variant ────────────────────────────────────────────────────────────
+// ─── Ticker data (live financial data, not from Sitecore) ───────────────────────
 
-const StockTickerDefault = (
-  props: StockTickerProps & { isPageEditing?: boolean }
-): JSX.Element => {
+const adnocGas = {
+  title: 'ADNOC Gas',
+  date: '2026-03-30',
+  lastPrice: '3.25',
+  changeVal: '0.01',
+  changePct: '0.31%',
+  openPrice: '3.24',
+  high: '3.26',
+  low: '3.19',
+  volume: '10097807',
+  marketCap: '249442121539',
+};
+
+const adxIndex = {
+  title: 'ADX General Index',
+  date: '2026-03-30',
+  lastPrice: '9525.78',
+  changeVal: '-71.05',
+  changePct: '-0.74%',
+  open: '9596.83',
+  high: '9618.85',
+  low: '9524.80',
+};
+
+// ─── Inner ──────────────────────────────────────────────────────────────────────
+
+const Inner = (props: StockTickerProps): JSX.Element => {
   const { fields, isPageEditing, params } = props;
   const id = params?.RenderingIdentifier;
 
@@ -60,85 +85,173 @@ const StockTickerDefault = (
     );
   }
 
+  // Determine color for change values
+  const adnocChangeColor = (adnocGas.changeVal || '').startsWith('-')
+    ? 'text-[#d50032]'
+    : 'text-[#009639]';
+  const adxChangeColor = (adxIndex.changeVal || '').startsWith('-')
+    ? 'text-[#d50032]'
+    : 'text-[#009639]';
+
   return (
-    <section data-component="StockTicker" id={id ? id : undefined} className="stock-ticker-section w-full bg-white border-b border-[#dbdcdb] font-['ADNOC_Sans',sans-serif]">
-      <div className="w-full max-w-[1400px] mx-auto px-[16px] md:px-[24px] lg:px-[8px]">
-        <div className="flex flex-col md:flex-row md:items-center gap-[12px] md:gap-[0px] py-[12px] md:py-[8px] overflow-x-auto">
-          <div className="flex flex-wrap items-center gap-[8px] md:gap-[16px] text-[14px] lg:text-[16px] font-[400] leading-[24px] text-[#505557] whitespace-nowrap">
-            {(fields.TickerName?.value || isPageEditing) && (
-              <Text field={fields.TickerName} tag="span" className="text-[#003341] font-[700]" />
-            )}
-            {(fields.TickerDate?.value || isPageEditing) && (
-              <>
-                <span className="text-[#505557]">Date:</span>
-                <Text field={fields.TickerDate} tag="span" className="font-[700] text-[#003341]" />
-              </>
-            )}
-            {(fields.TickerLastPrice?.value || isPageEditing) && (
-              <>
-                <span className="text-[#505557]">Last Price :</span>
-                <Text field={fields.TickerLastPrice} tag="span" className="font-[700] text-[#003341]" />
-              </>
-            )}
-            {(fields.TickerChange?.value || isPageEditing) && (
-              <>
-                <span className="text-[#505557]">Change:</span>
-                <Text field={fields.TickerChange} tag="span" className="font-[700] text-[#003341]" />
-              </>
-            )}
-            {(fields.TickerChangePercent?.value || isPageEditing) && (
-              <>
-                <span className="text-[#505557]">/</span>
-                <Text field={fields.TickerChangePercent} tag="span" className="font-[700] text-[#003341]" />
-              </>
-            )}
-            {(fields.TickerOpenPrice?.value || isPageEditing) && (
-              <>
-                <span className="text-[#505557]">Open Price:</span>
-                <Text field={fields.TickerOpenPrice} tag="span" className="font-[700] text-[#003341]" />
-              </>
-            )}
-            {(fields.TickerPreviousClose?.value || isPageEditing) && (
-              <>
-                <span className="text-[#505557]">Previous close:</span>
-                <Text field={fields.TickerPreviousClose} tag="span" className="font-[700] text-[#003341]" />
-              </>
-            )}
-            {(fields.TickerHigh?.value || isPageEditing) && (
-              <>
-                <span className="text-[#505557]">High:</span>
-                <Text field={fields.TickerHigh} tag="span" className="font-[700] text-[#003341]" />
-              </>
-            )}
-            {(fields.TickerLow?.value || isPageEditing) && (
-              <>
-                <span className="text-[#505557]">Low:</span>
-                <Text field={fields.TickerLow} tag="span" className="font-[700] text-[#003341]" />
-              </>
-            )}
-            {(fields.TickerVolume?.value || isPageEditing) && (
-              <>
-                <span className="text-[#505557]">Volume:</span>
-                <Text field={fields.TickerVolume} tag="span" className="font-[700] text-[#003341]" />
-              </>
-            )}
-            {(fields.TickerMarketCap?.value || isPageEditing) && (
-              <>
-                <span className="text-[#505557]">MarketCap:</span>
-                <Text field={fields.TickerMarketCap} tag="span" className="font-[700] text-[#003341]" />
-              </>
-            )}
+    <section
+      data-component="StockTicker"
+      id={id ? id : undefined}
+      className="w-full bg-[#f6f6f6] text-[#505557] text-[16px] font-[400] leading-[24px] font-['ADNOC_Sans',sans-serif]"
+    >
+      {/* Sitecore-editable heading (hidden visually but available in editor) */}
+      {isPageEditing && fields.Heading?.value && (
+        <div className="px-[12px] py-[4px] bg-[#e0e0e0]">
+          <Text field={fields.Heading} tag="span" className="font-[700] text-[#003341]" />
+        </div>
+      )}
+
+      <div className="w-full max-w-[1205px] px-[7.5px] mx-auto overflow-hidden">
+        <div className="w-full text-[rgba(16,155,122,0.9)] whitespace-nowrap overflow-x-auto scrollbar-hide">
+          <div className="inline-flex whitespace-nowrap animate-ticker">
+            {/* ADNOC Gas ticker set */}
+            <div className="inline-flex whitespace-nowrap">
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] ml-[12px] font-[700] whitespace-nowrap">
+                  {adnocGas.title}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Date:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adnocGas.date}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Last Price :</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adnocGas.lastPrice}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Change:</span>
+                <span className={`inline font-[700] whitespace-nowrap ${adnocChangeColor}`}>
+                  {adnocGas.changeVal}
+                </span>
+                <span className={`inline whitespace-nowrap ${adnocChangeColor}`}>/</span>
+                <span className={`inline mr-[12px] font-[700] whitespace-nowrap ${adnocChangeColor}`}>
+                  {adnocGas.changePct}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Open Price:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adnocGas.openPrice}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Previous close:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap"></span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">High:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adnocGas.high}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Low:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adnocGas.low}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Volume:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adnocGas.volume}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">MarketCap:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adnocGas.marketCap}
+                </span>
+              </div>
+            </div>
+
+            {/* ADX General Index ticker set */}
+            <div className="inline-flex whitespace-nowrap">
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] ml-[12px] font-[700] whitespace-nowrap">
+                  {adxIndex.title}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Date:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adxIndex.date}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Last Price :</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adxIndex.lastPrice}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Change:</span>
+                <span className={`inline font-[700] whitespace-nowrap ${adxChangeColor}`}>
+                  {adxIndex.changeVal}
+                </span>
+                <span className={`inline whitespace-nowrap ${adxChangeColor}`}>/</span>
+                <span className={`inline mr-[12px] font-[700] whitespace-nowrap ${adxChangeColor}`}>
+                  {adxIndex.changePct}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Open:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adxIndex.open}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Previous close:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap"></span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">High:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adxIndex.high}
+                </span>
+              </div>
+              <div className="inline-flex items-center py-[8px] whitespace-nowrap">
+                <span className="inline mr-[6px] whitespace-nowrap">Low:</span>
+                <span className="inline mr-[12px] font-[700] whitespace-nowrap">
+                  {adxIndex.low}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes ticker {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-ticker {
+          animation: ticker 30s linear infinite;
+        }
+        .animate-ticker:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };
 
-// ─── Exported Variants ──────────────────────────────────────────────────────────
+// ─── Exported Variant ───────────────────────────────────────────────────────────
 
-export const Default: React.FC<StockTickerProps> = (props) => {
+export const Default = (props: StockTickerProps): JSX.Element => {
   const { page } = useSitecore();
   const isEditing = page?.mode?.isEditing ?? false;
-  return <StockTickerDefault {...props} isPageEditing={isEditing} />;
+  return <Inner {...props} isPageEditing={isEditing} />;
 };

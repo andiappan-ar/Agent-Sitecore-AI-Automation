@@ -9,6 +9,7 @@ import * as TwoColumnSection from 'src/components/adnocgas/TwoColumnSection';
 import * as TwoColumnDark from 'src/components/adnocgas/TwoColumnDark';
 import * as StorySection from 'src/components/adnocgas/StorySection';
 import * as StockTicker from 'src/components/adnocgas/StockTicker';
+import * as SplitContent from 'src/components/adnocgas/SplitContent';
 import * as SimpleContent from 'src/components/adnocgas/SimpleContent';
 import * as Sidebar from 'src/components/adnocgas/Sidebar';
 import * as ScrollIndicator from 'src/components/adnocgas/ScrollIndicator';
@@ -29,6 +30,7 @@ import * as FinancialCalendar from 'src/components/adnocgas/FinancialCalendar';
 import * as CTAImageCard from 'src/components/adnocgas/CTAImageCard';
 import * as ContentBlock from 'src/components/adnocgas/ContentBlock';
 import * as ColumnsGrid from 'src/components/adnocgas/ColumnsGrid';
+import * as CardGrid from 'src/components/adnocgas/CardGrid';
 import * as Breadcrumb from 'src/components/adnocgas/Breadcrumb';
 import * as BoardMembers from 'src/components/adnocgas/BoardMembers';
 import * as ArticlesListing from 'src/components/adnocgas/ArticlesListing';
@@ -46,6 +48,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['TwoColumnDark', { ...TwoColumnDark }],
   ['StorySection', { ...StorySection }],
   ['StockTicker', { ...StockTicker }],
+  ['Stats', { ...StockTicker }],
+  ['SplitContent', { ...SplitContent }],
   ['SimpleContent', { ...SimpleContent }],
   ['Sidebar', { ...Sidebar }],
   ['ScrollIndicator', { ...ScrollIndicator }],
@@ -66,6 +70,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['CTAImageCard', { ...CTAImageCard }],
   ['ContentBlock', { ...ContentBlock }],
   ['ColumnsGrid', { ...ColumnsGrid }],
+  ['CardGrid', { ...CardGrid }],
   ['Breadcrumb', { ...Breadcrumb }],
   ['BoardMembers', { ...BoardMembers }],
   ['ArticlesListing', { ...ArticlesListing }],

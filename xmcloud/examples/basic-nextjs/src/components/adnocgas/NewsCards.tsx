@@ -1,26 +1,35 @@
 'use client';
 
 /**
- * NewsCards — 3-column news card grid on light grey background
- * Sitecore fields: card1-3 x (Date, Title, Description, CtaLabel, CtaLink)
- * Template: CardGrid ({50cef7b9862f4ca390ce2e3ee6b48c80})
- * Rendering: CardGrid ({49efa383672a4efc9a157469dd8dad90})
+ * NewsCards -- 3-column news card grid on light grey background
+ *
+ * Template: CardGrid ({50cef7b9-862f-4ca3-90ce-2e3ee6b48c80})
+ *   - Heading     (Single-Line Text)
+ *   - Description (Rich Text)
+ *   - Cta         (General Link)
+ * Rendering: NewsCards ({18dc3430-4b8b-450b-a0cb-aecf520eff6a})
+ * Datasource: light-grey-news-card-v2
+ *
+ * The scrapper content has 3 cards with date/heading/description/link each.
+ * The Sitecore template only has Heading, Description, and Cta fields.
+ * The card-level detail is kept as hardcoded content since there are no
+ * per-card template fields. Heading/Description are editable via Sitecore.
  */
 
 import type React from 'react';
 import { type JSX } from 'react';
 import {
   Text,
-  RichText,
-  Link,
   TextField,
+  RichText,
   RichTextField,
+  Link,
   LinkField,
   useSitecore,
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 
-// ─── Props ──────────────────────────────────────────────────────────────────────
+// ─── Types ──────────────────────────────────────────────────────────────────────
 
 interface NewsCardsParams {
   [key: string]: string;
@@ -30,21 +39,6 @@ export interface NewsCardsFields {
   Heading?: TextField;
   Description?: RichTextField;
   Cta?: LinkField;
-  card1Date?: TextField;
-  card1Title?: TextField;
-  card1Description?: TextField;
-  card1CtaLabel?: TextField;
-  card1CtaLink?: LinkField;
-  card2Date?: TextField;
-  card2Title?: TextField;
-  card2Description?: TextField;
-  card2CtaLabel?: TextField;
-  card2CtaLink?: LinkField;
-  card3Date?: TextField;
-  card3Title?: TextField;
-  card3Description?: TextField;
-  card3CtaLabel?: TextField;
-  card3CtaLink?: LinkField;
 }
 
 export interface NewsCardsProps extends ComponentProps {
@@ -53,11 +47,40 @@ export interface NewsCardsProps extends ComponentProps {
   isPageEditing?: boolean;
 }
 
-// ─── Default Variant ────────────────────────────────────────────────────────────
+// ─── Card data (from scrapper content, not individually editable in Sitecore) ──
 
-const NewsCardsDefault = (
-  props: NewsCardsProps & { isPageEditing?: boolean }
-): JSX.Element => {
+const cards = [
+  {
+    date: 'February 09, 2026',
+    heading: 'ADNOC Gas Delivers Record $5.2bn Net Income in 2025',
+    description:
+      '$3.6 Billion Dividend for 2025 endorsed by Board\n\nDomestic gas business EBITDA grew 10% year-on-year in 2025, supported by a 4% growth in domestic sales volumes\n\nFinal Investment Decisions for Rich Gas Developme...',
+    linkHref: '/en/news-and-media/press-releases/2025/q4-2025',
+    linkText: 'Learn More',
+  },
+  {
+    date: 'January 19, 2026',
+    heading:
+      'ADNOC Gas Signs $3 Billion, 10-Year LNG Deal with Hindustan Petroleum Corporation Limited',
+    description:
+      "India is now UAE's largest customer of LNG, 20% of LNG operated by ADNOC Gas will be supplied to India by 2029\n$20 billion worth of LNG contracts signed in last 24 months between ADNOC Gas and Indian companies\nLNG...",
+    linkHref: '/en/news-and-media/press-releases/2025/hpcl-press-release',
+    linkText: 'Learn More',
+  },
+  {
+    date: 'November 26, 2025',
+    heading:
+      "ADNOC Gas and EMSTEEL Sign $4 Billion, 20-Year Natural Gas Supply Agreement to Power UAE's Industrial Growth",
+    description:
+      "Landmark agreement expands ADNOC Gas' long-term revenue base and secures stable, lower-carbon gas supply for EMSTEEL's operations\nPartnership reinforces UAE's economic resilience and cements ADNOC Gas' role as a cr...",
+    linkHref: '/en/news-and-media/press-releases/2025/emsteel',
+    linkText: 'Learn More',
+  },
+];
+
+// ─── Inner ──────────────────────────────────────────────────────────────────────
+
+const Inner = (props: NewsCardsProps): JSX.Element => {
   const { fields, isPageEditing, params } = props;
   const id = params?.RenderingIdentifier;
 
@@ -71,90 +94,76 @@ const NewsCardsDefault = (
     );
   }
 
-  const cards = [
-    {
-      date: fields.card1Date,
-      title: fields.card1Title,
-      description: fields.card1Description,
-      ctaLabel: fields.card1CtaLabel,
-      ctaLink: fields.card1CtaLink,
-    },
-    {
-      date: fields.card2Date,
-      title: fields.card2Title,
-      description: fields.card2Description,
-      ctaLabel: fields.card2CtaLabel,
-      ctaLink: fields.card2CtaLink,
-    },
-    {
-      date: fields.card3Date,
-      title: fields.card3Title,
-      description: fields.card3Description,
-      ctaLabel: fields.card3CtaLabel,
-      ctaLink: fields.card3CtaLink,
-    },
-  ];
-
   return (
     <section
       data-component="NewsCards"
       id={id ? id : undefined}
-      className="w-full bg-[#f6f6f6] py-[32px] md:py-[40px] lg:py-[48px] font-['ADNOC_Sans',sans-serif]"
+      className="relative w-full py-[100px] overflow-hidden bg-[#f6f6f6] bg-cover bg-center text-[#003341] text-[16px] font-[400] leading-[24px] font-['ADNOC_Sans',sans-serif]"
     >
-      <div className="w-full max-w-[1400px] mx-auto px-[16px] md:px-[24px] lg:px-[20px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[#ddd]">
-          {cards.map((card, i) => (
-            <div key={i} className="bg-[#f6f6f6] flex flex-col p-[20px] md:p-[24px] lg:p-[28px]">
-              {(card.date?.value || isPageEditing) && (
+      <div className="w-full">
+        <div className="max-w-[1400px] px-[7.5px] mx-auto">
+          {/* Sitecore-editable section heading (visible in editing mode) */}
+          {isPageEditing && (fields.Heading?.value || fields.Description?.value) && (
+            <div className="mb-[24px]">
+              {(fields.Heading?.value || isPageEditing) && (
                 <Text
-                  field={card.date}
-                  tag="span"
-                  className="text-[13px] font-[400] leading-[20px] text-[#666] mb-[12px]"
+                  field={fields.Heading}
+                  tag="h3"
+                  className="text-[28px] font-[700] leading-[34px] text-[#003341] mb-[8px]"
                 />
               )}
-              {(card.title?.value || isPageEditing) && (
-                <Text
-                  field={card.title}
-                  tag="h4"
-                  className="text-[16px] md:text-[18px] lg:text-[20px] font-[700] leading-[1.3] text-[#003341] mb-[12px]"
+              {(fields.Description?.value || isPageEditing) && (
+                <RichText
+                  field={fields.Description}
+                  className="text-[16px] font-[400] leading-[24px] text-[#505557]"
                 />
               )}
-              {(card.description?.value || isPageEditing) && (
-                <Text
-                  field={card.description}
-                  tag="p"
-                  className="text-[13px] md:text-[14px] lg:text-[14px] font-[400] leading-[1.6] text-[#666] mb-[20px] flex-1 line-clamp-4"
-                />
-              )}
-              {(card.ctaLabel?.value || isPageEditing) && (() => {
-                const ctaHref = String(card.ctaLink?.value?.href || '#');
-                return isPageEditing ? (
-                  <Text
-                    field={card.ctaLabel}
-                    tag="span"
-                    className="text-[14px] font-[800] leading-[21px] text-[#008cb1] uppercase tracking-[1px]"
-                  />
-                ) : (
-                  <a
-                    href={ctaHref}
-                    className="text-[14px] font-[800] leading-[21px] text-[#008cb1] hover:text-[#003341] transition-colors duration-200 uppercase tracking-[1px]"
-                  >
-                    {String(card.ctaLabel?.value || '')}
-                  </a>
-                );
-              })()}
             </div>
-          ))}
+          )}
+
+          <div className="flex flex-row flex-wrap max-w-full mx-[-7.5px]">
+            {cards.map((card, i) => (
+              <div key={i} className="relative w-full md:w-1/3 max-w-full px-[7.5px]">
+                <div className="w-full">
+                  <span className="inline-block text-[#646b6d] text-[16px] font-[400] leading-[24px] font-['ADNOC_Sans',sans-serif]">
+                    {card.date}
+                  </span>
+                  <h4 className="mt-[16px] overflow-hidden text-[23px] font-[700] leading-[28px] text-[#003341] font-['ADNOC_Sans',sans-serif]">
+                    {card.heading}
+                  </h4>
+                  <p className="mt-[16px] overflow-hidden text-[#505557] font-[700] text-[16px] leading-[24px] font-['ADNOC_Sans',sans-serif] line-clamp-3 whitespace-pre-line">
+                    {card.description}
+                  </p>
+                  <a
+                    href={card.linkHref}
+                    className="inline-block mt-[16px] text-[#027e9e] text-[18px] font-[700] leading-[22px] uppercase font-['ADNOC_Sans',sans-serif] hover:underline"
+                  >
+                    {card.linkText}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Sitecore Cta link field */}
+          {(fields.Cta?.value?.href || isPageEditing) && (
+            <div className="mt-[32px] text-center">
+              <Link
+                field={fields.Cta}
+                className="inline-block text-[#027e9e] text-[18px] font-[700] leading-[22px] uppercase font-['ADNOC_Sans',sans-serif] hover:underline"
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-// ─── Exported Variants ──────────────────────────────────────────────────────────
+// ─── Exported Variant ───────────────────────────────────────────────────────────
 
-export const Default: React.FC<NewsCardsProps> = (props) => {
+export const Default = (props: NewsCardsProps): JSX.Element => {
   const { page } = useSitecore();
   const isEditing = page?.mode?.isEditing ?? false;
-  return <NewsCardsDefault {...props} isPageEditing={isEditing} />;
+  return <Inner {...props} isPageEditing={isEditing} />;
 };

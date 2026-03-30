@@ -24,15 +24,38 @@ SharedFields:
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
         <r
           uid="{A1000001-0001-0001-0001-000000000010}"
-          p:before="*"
           s:ds="local:/Data/position-fixed-desktop__navigation"
           s:id="{FBD7F2AE-D0B2-46A5-9174-0E30DA28C985}"
           s:ph="headless-main" />
         <r
           uid="{A1000001-0001-0001-0001-000000000020}"
-          p:before="*"
           s:ds="local:/Data/page-cover-widget-homepage"
           s:id="{6C82126E-FBC1-497D-BEA3-076C1194053F}"
+          s:ph="headless-main" />
+        <r
+          uid="{A1000001-0001-0001-0001-000000000030}"
+          s:ds="local:/Data/ticker-widget"
+          s:id="{C3464D89-D48E-4732-B6A5-22CCD7E7C79A}"
+          s:ph="headless-main" />
+        <r
+          uid="{A1000001-0001-0001-0001-000000000040}"
+          s:ds="local:/Data/light-grey-news-card-v2"
+          s:id="{18DC3430-4B8B-450B-A0CB-AECF520EFF6A}"
+          s:ph="headless-main" />
+        <r
+          uid="{A1000001-0001-0001-0001-000000000050}"
+          s:ds="local:/Data/two-column-text__dark-aos-init"
+          s:id="{4876FDC1-FA23-49DC-B429-DE44177A16D3}"
+          s:ph="headless-main" />
+        <r
+          uid="{A1000001-0001-0001-0001-000000000060}"
+          s:ds="local:/Data/props-columns-widget-props-columns-widget__small"
+          s:id="{4A9D9BA7-28FA-4EB4-93BA-2DF9D16D8F7F}"
+          s:ph="headless-main" />
+        <r
+          uid="{A1000001-0001-0001-0001-000000000080}"
+          s:ds="local:/Data/footer"
+          s:id="{51986D61-7CB0-47AB-A3EE-8BEF43F95357}"
           s:ph="headless-main" />
       </d>
     </r>

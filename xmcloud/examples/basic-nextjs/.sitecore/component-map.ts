@@ -11,6 +11,7 @@ import * as TwoColumnSection from 'src/components/adnocgas/TwoColumnSection';
 import * as TwoColumnDark from 'src/components/adnocgas/TwoColumnDark';
 import * as StorySection from 'src/components/adnocgas/StorySection';
 import * as StockTicker from 'src/components/adnocgas/StockTicker';
+import * as SplitContent from 'src/components/adnocgas/SplitContent';
 import * as SimpleContent from 'src/components/adnocgas/SimpleContent';
 import * as Sidebar from 'src/components/adnocgas/Sidebar';
 import * as ScrollIndicator from 'src/components/adnocgas/ScrollIndicator';
@@ -31,6 +32,7 @@ import * as FinancialCalendar from 'src/components/adnocgas/FinancialCalendar';
 import * as CTAImageCard from 'src/components/adnocgas/CTAImageCard';
 import * as ContentBlock from 'src/components/adnocgas/ContentBlock';
 import * as ColumnsGrid from 'src/components/adnocgas/ColumnsGrid';
+import * as CardGrid from 'src/components/adnocgas/CardGrid';
 import * as Breadcrumb from 'src/components/adnocgas/Breadcrumb';
 import * as BoardMembers from 'src/components/adnocgas/BoardMembers';
 import * as ArticlesListing from 'src/components/adnocgas/ArticlesListing';
@@ -49,6 +51,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['TwoColumnDark', { ...TwoColumnDark, componentType: 'client' }],
   ['StorySection', { ...StorySection, componentType: 'client' }],
   ['StockTicker', { ...StockTicker, componentType: 'client' }],
+  ['Stats', { ...StockTicker, componentType: 'client' }],
+  ['SplitContent', { ...SplitContent, componentType: 'client' }],
   ['SimpleContent', { ...SimpleContent, componentType: 'client' }],
   ['Sidebar', { ...Sidebar, componentType: 'client' }],
   ['ScrollIndicator', { ...ScrollIndicator, componentType: 'client' }],
@@ -69,6 +73,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['CTAImageCard', { ...CTAImageCard, componentType: 'client' }],
   ['ContentBlock', { ...ContentBlock, componentType: 'client' }],
   ['ColumnsGrid', { ...ColumnsGrid, componentType: 'client' }],
+  ['CardGrid', { ...CardGrid, componentType: 'client' }],
   ['Breadcrumb', { ...Breadcrumb, componentType: 'client' }],
   ['BoardMembers', { ...BoardMembers, componentType: 'client' }],
   ['ArticlesListing', { ...ArticlesListing, componentType: 'client' }],
