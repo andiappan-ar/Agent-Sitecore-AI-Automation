@@ -25,6 +25,7 @@ SharedFields:
         <r
           uid="{A1000001-0001-0001-0001-000000000010}"
           p:before="*"
+          s:ds="local:/Data/position-fixed-desktop__navigation"
           s:id="{FBD7F2AE-D0B2-46A5-9174-0E30DA28C985}"
           s:ph="headless-main" />
       </d>

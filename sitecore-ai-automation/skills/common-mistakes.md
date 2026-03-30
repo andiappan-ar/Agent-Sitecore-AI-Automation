@@ -107,7 +107,22 @@ Known gotchas learned from real projects. Apply these EVERY time.
     - Symptom: New component works in dev but not after build/deploy
     - Fix: Always regenerate map — it creates both `.sitecore/component-map.ts` and `component-map.client.ts`
 
-22. **Portproxy stale after Docker restart (Windows 11)**
+22. **`linktype="internal"` in General Link fields crashes layout service**
+    - Symptom: Layout service returns 500 when datasource has `<link linktype="internal" url="/path" />`
+    - Root cause: `linktype="internal"` requires a Sitecore item GUID (`id="{...}"`), not a URL path
+    - Fix: Use `linktype="external"` with `url="/path"` for path-based links, or provide the actual item ID for internal links
+    - CBRE reference: Their content items have empty link fields — populated via Page Builder UI, not YAML
+
+23. **Image field with empty `mediaid=""` crashes layout service**
+    - Symptom: 500 when datasource has `<image mediaid="" src="https://..." />`
+    - Fix: Either provide a valid media library item GUID or leave the field completely empty (no XML at all)
+
+24. **Rendering YAML missing Datasource Template/Location fields**
+    - Symptom: Datasource can't be assigned, layout service can't resolve datasource fields
+    - Fix: Add `Datasource Template` (path to template) and `Datasource Location` (query for data folder) to rendering SharedFields
+    - See CBRE CBREHeader.yml for reference pattern
+
+25. **Portproxy stale after Docker restart (Windows 11)**
     - Symptom: `curl https://xmcloudcm.localhost` times out but `curl https://<traefik-ip>` works
     - Fix: Delete and re-add portproxy, or update hosts file to point directly to Traefik IP
     - Get new Traefik IP: `docker inspect xmcloud-starter-js-traefik-1 --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'`

@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "fbd7f2ae-d0b2-46a5-9174-0e30da28c985"
 Parent: "e89446e9-e916-420a-baa8-ba53977ce9a3"
 Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
@@ -10,6 +10,21 @@ SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: SXA/16x16/navigation.png
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: "/sitecore/templates/Project/Adnoc/Components/adnocgas/Header"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "query:./ancestor-or-self::*[@@templateid='{2DC3AF7B-E9A5-44AD-A6E4-38069B5FFDDE}']/Data/Header"
+- ID: "7d8ae35f-9ed1-43b5-96a2-0a5f040d4e4e"
+  Hint: Open Properties after Add
+  Value: 0
+- ID: "a3411ff6-c978-40aa-b059-a49b9ca2209b"
+  Hint: Can select Page as a data source
+  Value: 1
+- ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
+  Hint: OtherProperties
+  Value: IsRenderingsWithDynamicPlaceholders=true
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
   Value: "854d5994-2e37-498b-b000-cae1cacd3b92"
@@ -38,4 +53,4 @@ Languages:
         sitecore\andiappan.ravi@omnia.ae
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260328T163009Z
+      Value: 20260331T010000Z
