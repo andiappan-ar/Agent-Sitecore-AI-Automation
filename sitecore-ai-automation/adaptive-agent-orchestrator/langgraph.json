@@ -10,6 +10,7 @@
     "create_component": "./graphs/create_component.py:build_create_component_graph",
     "create_page": "./graphs/create_page.py:build_create_page_graph",
     "deploy": "./graphs/deploy.py:build_deploy_graph",
+    "sitecore_workflow": "./graphs/sitecore_workflow.py:build_sitecore_workflow_graph",
     "full_pipeline": "./graphs/full_pipeline.py:build_full_pipeline_graph",
     "fix_agent": "./graphs/fix_agent.py:build_fix_agent_graph"
   },

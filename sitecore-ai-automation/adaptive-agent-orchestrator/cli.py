@@ -138,6 +138,9 @@ def cmd_run(args):
         elif workflow == "deploy":
             from graphs.deploy import run_deploy
             run_deploy(website, inputs)
+        elif workflow == "sitecore-workflow":
+            from graphs.sitecore_workflow import run_sitecore_workflow
+            run_sitecore_workflow(website, inputs)
         elif workflow == "full-pipeline":
             from graphs.full_pipeline import run_full_pipeline
             run_full_pipeline(website, inputs)

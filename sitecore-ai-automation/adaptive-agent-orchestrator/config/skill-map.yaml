@@ -89,6 +89,29 @@ react-component:
       - xmcloud/examples/basic-nextjs/src/components/adnocgas/Hero.tsx
       - xmcloud/examples/basic-nextjs/src/components/adnocgas/Accordion.tsx
 
+sitecore-workflow:
+  load-skills:
+    skills:
+      - skills/workflows/preflight.md
+      - skills/serialization/template-root.md
+      - skills/serialization/field-section.md
+      - skills/serialization/field-item.md
+      - skills/serialization/standard-values.md
+      - skills/serialization/rendering-definition.md
+      - skills/serialization/cross-file-rules.md
+      - skills/component/react-sitecore-patterns.md
+      - skills/component/component-registration.md
+      - skills/content/page-creation.md
+      - skills/content/datasource-creation.md
+      - skills/access/cli-commands.md
+      - skills/knowledge/system-guids.md
+      - skills/knowledge/path-conventions.md
+      - skills/common-mistakes.md
+    samples:
+      - xmcloud/examples/basic-nextjs/src/components/adnocgas/HeroHomepage.tsx
+      - examples/template-yaml/Accordions/AccordionBlock.yml
+      - examples/rendering-yaml/Accordions.yml
+
 scrape-website:
   load-skills:
     skills:
