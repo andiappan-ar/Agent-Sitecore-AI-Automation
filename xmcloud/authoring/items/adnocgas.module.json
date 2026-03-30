@@ -1,0 +1,44 @@
+{
+    "$schema": "../../.sitecore/schemas/ModuleFile.schema.json",
+    "namespace": "adnocgas",
+    "items": {
+        "path": "adnocgas",
+        "includes": [
+            {
+                "name": "adnocgas.templates",
+                "path": "/sitecore/templates/Project/Adnoc/Components/adnocgas",
+                "allowedPushOperations": "CreateUpdateAndDelete"
+            },
+            {
+                "name": "adnocgas.renderings",
+                "path": "/sitecore/layout/Renderings/Project/Adnoc/adnocgas",
+                "allowedPushOperations": "CreateUpdateAndDelete"
+            },
+            {
+                "name": "adnocgas.home",
+                "path": "/sitecore/content/Adnoc/adnocgas/Home",
+                "allowedPushOperations": "CreateUpdateAndDelete"
+            },
+            {
+                "name": "adnocgas.renderings-available",
+                "path": "/sitecore/content/Adnoc/adnocgas/Presentation/Available Renderings",
+                "allowedPushOperations": "CreateUpdateAndDelete"
+            },
+            {
+                "name": "adnocgas.partialdesigns",
+                "path": "/sitecore/content/Adnoc/adnocgas/Presentation/Partial Designs",
+                "allowedPushOperations": "CreateUpdateAndDelete"
+            },
+            {
+                "name": "adnocgas.pagedesigns",
+                "path": "/sitecore/content/Adnoc/adnocgas/Presentation/Page Designs",
+                "allowedPushOperations": "CreateUpdateAndDelete"
+            },
+            {
+                "name": "adnocgas.settings",
+                "path": "/sitecore/content/Adnoc/adnocgas/Settings",
+                "allowedPushOperations": "CreateUpdateAndDelete"
+            }
+        ]
+    }
+}

@@ -1,0 +1,30 @@
+﻿---
+ID: "3a578d58-b2ea-4740-8b94-e81637075fd0"
+Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
+Template: "d4b3c51e-3678-4cbd-84d2-e0aab3be8c59"
+Path: "/sitecore/content/Adnoc/adnocgas/Home/Data/page-cover-widget"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T140816Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "27e6dad4-e77e-437a-98f0-d0a51efbe99d"
+    - ID: "8d4a01a9-7672-47e2-96c9-eb42ac828c8c"
+      Hint: Heading
+      Value: Investor Relations
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260328T140816Z

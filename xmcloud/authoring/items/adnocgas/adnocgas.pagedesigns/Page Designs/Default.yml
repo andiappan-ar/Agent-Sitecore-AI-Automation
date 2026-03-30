@@ -1,0 +1,38 @@
+﻿---
+ID: "b3c3391a-8e7e-459a-88a4-20940caddc5b"
+Parent: "4a4409d7-7b13-42fc-9db8-4da8ec6b11c5"
+Template: "1105b8f8-1e00-426b-bf1f-c840742d827b"
+Path: /sitecore/content/Adnoc/adnocgas/Presentation/Page Designs/Default
+SharedFields:
+- ID: "0966b999-0d0e-4278-acc9-9da69d461fe6"
+  Hint: PartialDesigns
+  Value: "{3E6D36EF-8288-4117-9ED6-F9D8FDEF62C0}|{97C57CD0-290A-4BC6-8D2E-DA10192EBA21}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "4907994d-b55c-445e-a048-d469f5ab7c90"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T113004Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "38440a71-3628-489a-bced-0ad7b4335775"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260328T113007Z

@@ -1,0 +1,30 @@
+﻿---
+ID: "84a40cbf-8c77-45f8-a833-f92558c01577"
+Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
+Template: "6adc31c8-1b69-4745-8a50-929274b24347"
+Path: "/sitecore/content/Adnoc/adnocgas/Home/Data/widget-innovation-slider-widget"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T140819Z
+    - ID: "3d78ee0f-2530-4134-aedb-dc0428f954c4"
+      Hint: Heading
+      Value: 1970
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8be6c24b-5964-46ac-946b-16ace6cbd7ac"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260328T140819Z

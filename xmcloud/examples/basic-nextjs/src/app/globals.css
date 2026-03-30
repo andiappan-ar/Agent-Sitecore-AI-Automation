@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+
+/* ─── ADNOC Gas — Brand Fonts ────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'ADNOC Sans';
+  src: url('../assets/fonts/ADNOC_Sans_Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ADNOC Sans';
+  src: url('../assets/fonts/ADNOC_Sans_Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ADNOC Sans';
+  src: url('../assets/fonts/ADNOC_Sans_Medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ADNOC Sans';
+  src: url('../assets/fonts/ADNOC_Sans_Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ADNOC Sans';
+  src: url('../assets/fonts/ADNOC_Sans_XBold.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── ADNOC Gas — Design Tokens ──────────────────────────────────────────────── */
+
+:root {
+  --color-primary: #001a70;
+  --color-accent: #00bfb2;
+  --color-surface: #ffffff;
+  --color-dark: #003341;
+  --color-text: #505557;
+  --color-link: #008cb1;
+  --color-border: #dbdcdb;
+  --color-bg-light: #f6f6f6;
+  --font-primary: 'ADNOC Sans', sans-serif;
+}
+
+/* ─── ADNOC Gas — Global Base Styles ─────────────────────────────────────────── */
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }

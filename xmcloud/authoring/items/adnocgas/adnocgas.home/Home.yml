@@ -1,0 +1,73 @@
+﻿---
+ID: "1e9172eb-b66d-4e1e-b765-cdcea66fa65a"
+Parent: "743c5fbc-c77c-4eb2-ae66-49a8bb8739fd"
+Template: "16af90c2-8499-4219-a442-aad1446a343f"
+Path: /sitecore/content/Adnoc/adnocgas/Home
+BranchID: "45cf9f42-b3ac-4412-aab9-f8441c7e448e"
+SharedFields:
+- ID: "24171bf1-c0e1-480e-be76-4c0a1876f916"
+  Hint: Page Design
+  Value: "{B3C3391A-8E7E-459A-88A4-20940CADDC5B}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{12C95C5F-305B-4C19-A83E-1775D9DF2D28}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "663aac65-0ce8-4ef3-a81e-d10453612ae2"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{A1000001-0001-0001-0001-000000000001}"
+          p:before="*"
+          s:ds="local:/Data/test-hero"
+          s:id="{6C82126E-FBC1-497D-BEA3-076C1194053F}"
+          s:ph="headless-main" />
+        <r
+          uid="{A1000001-0001-0001-0001-000000000006}"
+          p:after="*[1=2]"
+          s:ds="local:/Data/two-column-text__dark-aos-init"
+          s:id="{802BF9F5-EB60-40A0-BE65-28CEE6A4810D}"
+          s:ph="headless-main" />
+      </d>
+    </r>
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{F558BEC9-C602-4D7A-B9A1-D0411C946EA4}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T112955Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Home
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "5c553ef4-bba5-447d-aef5-14eccde7818a"
+      Hint: Title
+      Value: Home
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "72bbc44f-a70b-4a73-afe4-b131f53cc1a3"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260328T174723Z

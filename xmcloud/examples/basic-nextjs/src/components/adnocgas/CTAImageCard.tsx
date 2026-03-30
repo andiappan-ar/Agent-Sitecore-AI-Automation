@@ -1,0 +1,118 @@
+'use client';
+
+/**
+ * CTAImageCard — Two-column section with text/CTA on one side and image on the other
+ * Sitecore fields: Preheading, Heading, Subtitle, Description, CtaLabel, CtaLink, Image
+ * Template: SplitContent ({9b675f0bfc4049ad96572c778b653e49})
+ * Rendering: SplitContent ({4876fdc1fa2349dcb429de44177a16d3})
+ */
+
+import type React from 'react';
+import { type JSX } from 'react';
+import {
+  NextImage as ContentSdkImage,
+  ImageField,
+  Text,
+  TextField,
+  RichText,
+  RichTextField,
+  LinkField,
+  useSitecore,
+} from '@sitecore-content-sdk/nextjs';
+import { ComponentProps } from 'lib/component-props';
+
+// ─── Props ──────────────────────────────────────────────────────────────────────
+
+interface CTAImageCardParams {
+  [key: string]: string;
+}
+
+export interface CTAImageCardFields {
+  Preheading?: TextField;
+  Heading?: TextField;
+  Subtitle?: TextField;
+  Description?: RichTextField;
+  CtaLabel?: TextField;
+  CtaLink?: LinkField;
+  Image?: ImageField;
+}
+
+export interface CTAImageCardProps extends ComponentProps {
+  params: CTAImageCardParams;
+  fields: CTAImageCardFields;
+  isPageEditing?: boolean;
+}
+
+// ─── Default Variant ────────────────────────────────────────────────────────────
+
+const CTAImageCardDefault = (
+  props: CTAImageCardProps & { isPageEditing?: boolean }
+): JSX.Element => {
+  const { fields, isPageEditing, params } = props;
+  const id = params?.RenderingIdentifier;
+
+  if (!fields) {
+    return (
+      <section className="component cta-image-card" id={id}>
+        <div className="component-content">
+          <span className="is-empty-hint">CTAImageCard</span>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section data-component="CTAImageCard" id={id ? id : undefined} className="cta-image-card-section w-full bg-white py-[40px] md:py-[60px] lg:py-[80px] font-['ADNOC_Sans',sans-serif]">
+      <div className="w-full max-w-[1400px] mx-auto px-[16px] md:px-[24px] lg:px-[8px]">
+        <div className="flex flex-col lg:flex-row gap-[24px] lg:gap-[40px] items-center">
+          {/* Text */}
+          <div className="w-full lg:w-1/2">
+            {(fields.Preheading?.value || isPageEditing) && (
+              <Text field={fields.Preheading} tag="div" className="text-[14px] md:text-[16px] font-[400] leading-[24px] text-[#505557] mb-[8px]" />
+            )}
+            {(fields.Heading?.value || isPageEditing) && (
+              <Text field={fields.Heading} tag="h3" className="text-[24px] md:text-[30px] lg:text-[40px] font-[700] leading-[1.2] lg:leading-[48px] text-[#003341] mb-[8px]" />
+            )}
+            {(fields.Subtitle?.value || isPageEditing) && (
+              <Text field={fields.Subtitle} tag="h4" className="text-[18px] md:text-[20px] lg:text-[23px] font-[700] leading-[1.2] lg:leading-[28px] text-[#003341] mb-[16px]" />
+            )}
+            {(fields.Description?.value || isPageEditing) && (
+              <RichText field={fields.Description} className="text-[14px] md:text-[16px] font-[400] leading-[1.5] lg:leading-[24px] text-[#505557] mb-[24px]" />
+            )}
+            {(fields.CtaLabel?.value || isPageEditing) && (
+              isPageEditing ? (
+                <Text field={fields.CtaLabel} tag="span" className="text-[16px] font-[800] leading-[24px] text-[#008cb1] uppercase" />
+              ) : (
+                <a href={String(fields.CtaLink?.value?.href || '#')} className="text-[16px] font-[800] leading-[24px] text-[#008cb1] hover:text-[#003341] transition-colors duration-200 uppercase">
+                  {String(fields.CtaLabel?.value || '')}
+                </a>
+              )
+            )}
+          </div>
+          {/* Image */}
+          <div className="w-full lg:w-1/2">
+            {(fields.Image?.value?.src || isPageEditing) && (
+              <ContentSdkImage
+                field={{
+                  ...fields.Image,
+                  value: {
+                    ...fields.Image?.value,
+                    style: { width: '100%', height: 'auto', borderRadius: '4px', objectFit: 'cover' },
+                  },
+                }}
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── Exported Variants ──────────────────────────────────────────────────────────
+
+export const Default: React.FC<CTAImageCardProps> = (props) => {
+  const { page } = useSitecore();
+  const isEditing = page?.mode?.isEditing ?? false;
+  return <CTAImageCardDefault {...props} isPageEditing={isEditing} />;
+};

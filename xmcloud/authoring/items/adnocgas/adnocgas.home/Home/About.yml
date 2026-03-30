@@ -1,0 +1,71 @@
+﻿---
+ID: "fb85e5a7-90f4-4a4a-994b-e929232bed59"
+Parent: "1e9172eb-b66d-4e1e-b765-cdcea66fa65a"
+Template: "16af90c2-8499-4219-a442-aad1446a343f"
+Path: /sitecore/content/Adnoc/adnocgas/Home/About
+BranchID: "aa757cc9-f2da-4f78-a33d-9d382d5fcf92"
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{0CB0E0B0-9C57-4FD5-A50F-5A75D44DF08C}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "b1560ea8-ac57-40b5-82af-809df021841e"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{A4FFE864-D0E4-47C0-811D-CBCA5FA4C89E}"
+          p:before="*"
+          s:id="{7A1D9A21-B8D7-42F9-9B0B-92ABF8D1974F}"
+          s:par="?Styles=%7bF05220C0-BBB6-40F6-A605-CBB13916C4B3%7d%7c%7b2A8B0069-7BB4-49F2-92C7-BB8F499184AB%7d%7c%7b635C4AF3-07C2-419E-A28F-CDD9EC6E8E38%7d%7c%7b7FFCC500-0CA5-4022-A0E5-F2B751627102%7d%7c%7bB219F082-F056-47B0-A3D4-DBD3368124D0%7d%7c%7bD3E76E9A-E68B-407C-8F8B-6B307DFE8137%7d%7c%7b37984201-3F49-4A8B-AC65-42B2F2ACD7C3%7d%7c%7bD9478342-7340-4596-98F2-4ED351748B85%7d%7c%7bE4A46CB1-6876-4B78-9C2F-62CDD22C7F68%7d%7c%7bE4052B80-DE21-42E7-991A-1448E837F9ED%7d%7c%7bDF48682B-F158-4368-A4EB-4B3C1F7FEBC7%7d%7c%7b6A47BFAE-DF6C-43FC-ADB3-FF9B6420501E%7d%7c%7bF30B116F-C3CD-46E8-8995-8184D7B51F21%7d&amp;GridParameters=%7b7465D855-992E-4DC2-9855-A03250DFA74B%7d&amp;DynamicPlaceholderId=1"
+          s:ph="headless-main" />
+        <r
+          uid="{583301FD-B696-4CD8-B598-F014BB2441C7}"
+          p:after="*[1=2]"
+          s:ds="local:/Data/Text 1"
+          s:id="{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}"
+          s:par="?GridParameters=%7b7465D855-992E-4DC2-9855-A03250DFA74B%7d%7c%7b959FDFBB-4691-4A17-816F-7A5330B8216A%7d%7c%7b175CB6DA-CF89-4D56-888C-EB79F514D12F%7d%7c%7b7DF615F7-0A53-42E1-A164-2B36D6126314%7d&amp;FieldNames=%7bE13A054D-10FD-438D-BC69-2598AC5507BC%7d"
+          s:ph="/headless-main/container-1" />
+      </d>
+    </r>
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{B8E694EC-3576-4CC6-8628-AEE286A9AB38}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T113004Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: About
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "5c553ef4-bba5-447d-aef5-14eccde7818a"
+      Hint: Title
+      Value: About
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b4033df8-6685-40c6-8aff-779fd0fc3dda"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260328T113008Z

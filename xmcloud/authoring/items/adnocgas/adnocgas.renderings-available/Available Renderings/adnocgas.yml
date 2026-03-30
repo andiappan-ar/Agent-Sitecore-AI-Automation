@@ -1,0 +1,51 @@
+﻿---
+ID: "8bdf5314-8261-4538-9ed5-5d50a2590ca6"
+Parent: "97d1d3c9-5519-4fc1-874d-5ffc85e5fe80"
+Template: "76da0a8d-fc7e-42b2-af1e-205b49e43f98"
+Path: /sitecore/content/Adnoc/adnocgas/Presentation/Available Renderings/adnocgas
+SharedFields:
+- ID: "715ae6c0-71c8-4744-ab4f-65362d20ad65"
+  Hint: Renderings
+  Value: |
+    {99E40B86-B568-4338-8415-0EB008A08A99}
+    {24019203-B38D-45A7-B9DA-B0965C7676AC}
+    {FBD7F2AE-D0B2-46A5-9174-0E30DA28C985}
+    {51986D61-7CB0-47AB-A3EE-8BEF43F95357}
+    {9FB62639-C717-4B6A-9D64-3546D3090CDA}
+    {4876FDC1-FA23-49DC-B429-DE44177A16D3}
+    {E46F18F8-4A13-41E5-9757-68100A011985}
+    {C3464D89-D48E-4732-B6A5-22CCD7E7C79A}
+    {49EFA383-672A-4EFC-9A15-7469DD8DAD90}
+    {FB52D618-C711-4B7C-BCC3-95E9977142E1}
+    {7EC34C9F-1DE7-48B0-A073-8915485D4D55}
+    {4509921B-6E87-4EFD-ABE2-145170D9A524}
+    {E478FE45-96BE-4A12-A8D5-210B121010EC}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "c2df0698-40cb-4f9d-b4c1-f252f3671db2"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T161319Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3c5d1917-de44-44d1-adb5-efc9fb45a344"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260328T161319Z

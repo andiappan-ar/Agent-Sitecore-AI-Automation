@@ -1,0 +1,27 @@
+﻿---
+ID: "74b1a559-04ad-4a67-ae9c-4437bdfef016"
+Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
+Template: "3260c793-9a85-4d27-a0c9-e90edf1f656d"
+Path: "/sitecore/content/Adnoc/adnocgas/Home/Data/video-popup-widget-aos-init"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T140818Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0d927ea0-7f18-4f2d-9c64-3a16d0a7ec4e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260328T140818Z

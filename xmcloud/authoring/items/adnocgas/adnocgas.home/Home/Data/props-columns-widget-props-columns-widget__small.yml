@@ -1,0 +1,30 @@
+﻿---
+ID: "f1f04407-6bd3-4863-ab50-550e1f397332"
+Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
+Template: "50cef7b9-862f-4ca3-90ce-2e3ee6b48c80"
+Path: "/sitecore/content/Adnoc/adnocgas/Home/Data/props-columns-widget-props-columns-widget__small"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "13d6454b-f4fc-40ce-9b48-9e9e1dc35eed"
+      Hint: Heading
+      Value: Our Operations
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T140752Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "11125764-a734-4061-a365-d574a06d34fe"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260328T140752Z

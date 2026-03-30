@@ -1,0 +1,33 @@
+﻿---
+ID: "0bf850cf-dad9-49e2-9019-3fe28d9fd15e"
+Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
+Template: "cf5cbea0-f6ef-463c-9673-e35fd200d451"
+Path: /sitecore/content/Adnoc/adnocgas/Home/Data/footer
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T140753Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c9109af5-d0c1-4f04-b307-4fc152a20bf0"
+    - ID: "a6ee95a1-33ed-450b-b640-107fceee44a5"
+      Hint: Description
+      Value: Copyright � 2026 Board of Directors Executive Management
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260328T140753Z
+    - ID: "fd38d8aa-6435-433b-bc17-94646aac67da"
+      Hint: Heading
+      Value: Company

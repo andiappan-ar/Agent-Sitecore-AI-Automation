@@ -1,0 +1,71 @@
+﻿---
+ID: "7304f530-2fd6-4dc9-bb0a-eaa7328ae8cf"
+Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
+Template: "d4b3c51e-3678-4cbd-84d2-e0aab3be8c59"
+Path: "/sitecore/content/Adnoc/adnocgas/Home/Data/page-cover-widget-homepage"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "15e71366-7595-4daf-a1e8-0be7ea8491b2"
+      Hint: Subheading
+      Value: One of the World's Largest Integrated Gas Companies
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260328T140751Z
+    - ID: "3a256b0f-288d-48b8-9367-2f904f384f33"
+      Hint: stat1Subtitle
+      Value: Gas processing capacity
+    - ID: "41e56d9f-770d-4c1c-990a-98597334faa3"
+      Hint: stat1Title
+      Value: +10 bscfd
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "55442359-4ef3-4d48-bf15-d6fc564cd5a8"
+      Hint: BackgroundImage
+      Value: |
+        <image mediaid="" src="https://www.adnocgas.ae/-/media/gas/images/home/animated-hero-banner/hero-bg.ashx" />
+    - ID: "7a9781f5-d911-4a2e-b4ce-e159df69007d"
+      Hint: stat2Subtitle
+      Value: Liquified Natural Gas (LNG) production capacity
+    - ID: "7b45c40b-7f27-4747-be52-d11ecd6f18ec"
+      Hint: Description
+      Value: "<p>ADNOC Gas is a large-scale, integrated gas processing company and a subsidiary of ADNOC, one of the world's largest integrated energy companies.</p><p>As a leading global gas player with access to capacity of around 10 billion standard cubic feet of gas per day (bscfd), we serve a wide range of domestic and international customers with an expanding portfolio of products. We supply around 60% of the UAE's gas needs and export natural gas and related products to a diverse customer base in over 20 countries.</p>"
+    - ID: "7c8234e8-27ea-484e-986d-293f98c7b94d"
+      Hint: stat4Subtitle
+      Value: UAE gas requirements met by ADNOC Gas
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "638c1ce2-b5b5-4447-9eeb-15437cd07d03"
+    - ID: "8d4a01a9-7672-47e2-96c9-eb42ac828c8c"
+      Hint: Heading
+      Value: ADNOC Gas
+    - ID: "9b742beb-6c13-4483-82d7-e632fb2b254c"
+      Hint: stat3Subtitle
+      Value: Gas pipelines across the UAE
+    - ID: "b3a90890-9b9c-4ec8-9c97-2498e071d307"
+      Hint: stat2Title
+      Value: 6 mmtpa
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\andiappan.ravi@omnia.ae
+    - ID: "c2fc81ba-dbef-4f02-bb99-28605830ee5e"
+      Hint: CtaLabel
+      Value: Strategy Update
+    - ID: "c3eaa712-1efa-4f63-b01e-e3dabd491e03"
+      Hint: CtaLink
+      Value: |
+        <link linktype="internal" text="Strategy Update" url="/en/investor-relations" />
+    - ID: "cb83d92d-a031-4e27-97d6-b624a64d32df"
+      Hint: stat3Title
+      Value: +3,260 km
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260328T172155Z
+    - ID: "de7e66d0-d7ea-4fac-8ef7-54aadcd95089"
+      Hint: stat4Title
+      Value: ~60%
