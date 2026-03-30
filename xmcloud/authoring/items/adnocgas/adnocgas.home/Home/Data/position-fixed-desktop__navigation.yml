@@ -3,6 +3,10 @@ ID: "74a73ff5-098e-4541-ae72-719f626dd008"
 Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
 Template: "a08f7dba-7c3f-4893-818e-9e75ee073359"
 Path: "/sitecore/content/Adnoc/adnocgas/Home/Data/position-fixed-desktop__navigation"
+SharedFields:
+- ID: "4f6cc148-4715-4e0d-a03a-2342c173d855"
+  Hint: Logo
+  Value: "<image mediaid=\"{EDD1DD1D-1F3B-4954-AC46-AF82F9E83542}\" alt=\"ADNOC Gas Logo\" />"
 Languages:
 - Language: en
   Versions:

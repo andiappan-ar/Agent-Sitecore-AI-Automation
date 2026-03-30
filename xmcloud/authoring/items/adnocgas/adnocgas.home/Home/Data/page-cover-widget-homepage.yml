@@ -26,8 +26,7 @@ Languages:
         sitecore\andiappan.ravi@omnia.ae
     - ID: "55442359-4ef3-4d48-bf15-d6fc564cd5a8"
       Hint: BackgroundImage
-      Value: |
-        <image mediaid="" src="https://www.adnocgas.ae/-/media/gas/images/home/animated-hero-banner/hero-bg.ashx" />
+      Value: ""
     - ID: "7a9781f5-d911-4a2e-b4ce-e159df69007d"
       Hint: stat2Subtitle
       Value: Liquified Natural Gas (LNG) production capacity
@@ -58,14 +57,37 @@ Languages:
       Value: Strategy Update
     - ID: "c3eaa712-1efa-4f63-b01e-e3dabd491e03"
       Hint: CtaLink
-      Value: |
-        <link linktype="internal" text="Strategy Update" url="/en/investor-relations" />
+      Value: "<link linktype=\"external\" url=\"/en/investor-relations\" text=\"Strategy Update\" />"
     - ID: "cb83d92d-a031-4e27-97d6-b624a64d32df"
       Hint: stat3Title
       Value: +3,260 km
+    - ID: "734e45fb-bda4-4581-9993-62c90a5b9533"
+      Hint: stat1Value
+      Value: "+10"
+    - ID: "e13d6571-3502-48a7-8390-c776502dc9a6"
+      Hint: stat1Unit
+      Value: "bscfd"
+    - ID: "1dd82414-78c2-4a58-8964-6d4e19c119c9"
+      Hint: stat2Value
+      Value: "6"
+    - ID: "35296222-912d-4bca-b423-45d4a50f8276"
+      Hint: stat2Unit
+      Value: "mmtpa"
+    - ID: "716786f7-45c4-4c17-ab9f-3d27e9f6df3f"
+      Hint: stat3Value
+      Value: "+3,260"
+    - ID: "5ddb2a05-f2f8-4f54-9718-9311aca6f956"
+      Hint: stat3Unit
+      Value: "km"
+    - ID: "63b3903f-9b85-4107-9798-c18b92893239"
+      Hint: stat4Value
+      Value: "~60"
+    - ID: "ba0f1a31-464a-42ec-8e39-89b4e4561254"
+      Hint: stat4Unit
+      Value: "%"
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260328T172155Z
+      Value: 20260331T020000Z
     - ID: "de7e66d0-d7ea-4fac-8ef7-54aadcd95089"
       Hint: stat4Title
       Value: ~60%

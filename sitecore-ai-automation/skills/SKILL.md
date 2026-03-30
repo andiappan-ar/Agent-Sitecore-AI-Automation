@@ -58,6 +58,7 @@ Entry point for all skills. Each skill is focused on ONE task, designed for the 
 | Preflight | `workflows/preflight.md` | Before any Sitecore operation |
 | Environment Discovery | `workflows/environment-discovery.md` | Auditing what's in Sitecore |
 | React to Sitecore Component | `workflows/react-to-sitecore-component.md` | Transforming scraped React → Content SDK TSX |
+| Conversion Checklist | `workflows/react-to-sitecore-component-checklist.md` | Step-by-step checklist with field rules, pitfalls |
 | Layout Migration | `workflows/layout-migration.md` | Migrating design system to rendering host |
 
 ### Legacy (full reference — use only when specific skills are insufficient)

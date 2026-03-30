@@ -15,18 +15,24 @@ Parent: "{{RENDERING_FOLDER_ID}}"
 Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
 Path: "/sitecore/layout/Renderings/Project/{{Collection}}/{{SiteName}}/{{ComponentName}}"
 SharedFields:
-- ID: "1845a951-d5b6-4a68-9ffb-41620125aaee"
-  Hint: Component Name
+- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
+  Hint: componentName
   Value: "{{ComponentName}}"
-- ID: "b5b27af1-25ef-4e75-94e2-8274d8c1e4cd"
-  Hint: Datasource Location
-  Value: "query:./ancestor-or-self::*[@@templateid='{2DC3AF7B-E9A5-44AD-A6E4-38069B5FFDDE}']/Data/{{ComponentName}}"
-- ID: "1a7c85e5-dc0b-4b1d-9b6e-5e5e5e5e5e5e"
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
   Hint: Datasource Template
-  Value: "{{TEMPLATE_ROOT_ID}}"
-- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
-  Hint: __Sortorder
-  Value: 100
+  Value: "/sitecore/templates/Project/{{Collection}}/Components/{{SiteName}}/{{TemplateName}}"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "./Data"
+- ID: "7d8ae35f-9ed1-43b5-96a2-0a5f040d4e4e"
+  Hint: Open Properties after Add
+  Value: 0
+- ID: "a3411ff6-c978-40aa-b059-a49b9ca2209b"
+  Hint: Can select Page as a data source
+  Value: 1
+- ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
+  Hint: OtherProperties
+  Value: IsRenderingsWithDynamicPlaceholders=true
 Languages:
 - Language: en
   Versions:
@@ -36,6 +42,16 @@ Languages:
       Hint: __Created
       Value: "{{TIMESTAMP}}"
 ```
+
+**CRITICAL SharedFields (learned from CBRE + real testing):**
+- `componentName` (037fe404) — MUST match the TSX component map key exactly
+- `Datasource Template` (1a7c85e5) — full path to template, NOT a GUID
+- `Datasource Location` (b5b27af1) — `./Data` for simple setup, or query for specific folder
+- `Open Properties after Add` (7d8ae35f) — set to 0
+- `Can select Page as a data source` (a3411ff6) — set to 1
+- `OtherProperties` (e829c217) — `IsRenderingsWithDynamicPlaceholders=true`
+
+**Without these fields, linking a datasource via `s:ds=` in `__Renderings` causes layout service 500.**
 
 ## Rules
 

@@ -28,6 +28,12 @@ SharedFields:
           s:ds="local:/Data/position-fixed-desktop__navigation"
           s:id="{FBD7F2AE-D0B2-46A5-9174-0E30DA28C985}"
           s:ph="headless-main" />
+        <r
+          uid="{A1000001-0001-0001-0001-000000000020}"
+          p:before="*"
+          s:ds="local:/Data/page-cover-widget-homepage"
+          s:id="{6C82126E-FBC1-497D-BEA3-076C1194053F}"
+          s:ph="headless-main" />
       </d>
     </r>
 - ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
