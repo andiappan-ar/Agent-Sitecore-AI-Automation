@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "69dfb28f-991b-4031-8eda-baff27e10f01"
 Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
 Template: "9b675f0b-fc40-49ad-9657-2c778b653e49"
@@ -8,6 +8,21 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: "be1c1edf-557d-47dc-bba0-3fa586f2d29f"
+      Hint: Heading
+      Value: "Our Company"
+    - ID: "fb984b78-5ab5-450e-b3dc-cc3941b51e86"
+      Hint: Description
+      Value: "ADNOC Gas is a world-class integrated gas company operating an unmatched asset base that supplies around 60% of the UAE's natural gas requirements and serves customers in more than 20 countries."
+    - ID: "efe71d17-1dd9-429e-b3ff-d92cb77d765c"
+      Hint: CtaLabel
+      Value: "Our Company"
+    - ID: "a6c87345-6138-4cf4-a69e-614fa31a67a5"
+      Hint: CtaLink
+      Value: "<link linktype=\"external\" url=\"https://www.adnocgas.ae/en/our-company\" text=\"Our Company\" />"
+    - ID: "d4e5f6a7-4003-4d03-e003-splitimg00018"
+      Hint: BackgroundImage
+      Value: ""
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260328T140752Z
@@ -22,12 +37,6 @@ Languages:
       Hint: __Updated by
       Value: |
         sitecore\andiappan.ravi@omnia.ae
-    - ID: "be1c1edf-557d-47dc-bba0-3fa586f2d29f"
-      Hint: Heading
-      Value: Our Company
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260328T140752Z
-    - ID: "fb984b78-5ab5-450e-b3dc-cc3941b51e86"
-      Hint: Description
-      Value: "ADNOC Gas is a world-class integrated gas company operating an unmatched asset base that supplies around 60% of the UAE's natural gas requirements and serves customers in more than 20 countries."
+      Value: 20260330T200000Z

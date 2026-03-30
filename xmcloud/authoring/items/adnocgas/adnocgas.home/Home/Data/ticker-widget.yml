@@ -10,7 +10,7 @@ Languages:
     Fields:
     - ID: "189ae6e7-7204-4819-bb51-d26508197cb2"
       Hint: Heading
-      Value: ADNOC Gas
+      Value: "ADX: ADNOCGAS"
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260328T140752Z
@@ -30,4 +30,4 @@ Languages:
       Value: 20260328T140752Z
     - ID: "e3988bbf-1df8-4e16-92d8-a7cd2f22f7f4"
       Hint: Description
-      Value: "Date: Last Price : Change:"
+      Value: "Data delayed at least 15 minutes. Source: ADX"

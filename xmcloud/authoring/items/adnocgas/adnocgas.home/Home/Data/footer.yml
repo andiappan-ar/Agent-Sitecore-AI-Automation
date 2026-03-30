@@ -1,13 +1,155 @@
-﻿---
+---
 ID: "0bf850cf-dad9-49e2-9019-3fe28d9fd15e"
 Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
 Template: "cf5cbea0-f6ef-463c-9673-e35fd200d451"
 Path: /sitecore/content/Adnoc/adnocgas/Home/Data/footer
+SharedFields:
+- ID: "4925c5a5-7c04-4e39-bf25-e033d35dfde4"
+  Hint: Logo
+  Value: "<image />"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
+    - ID: "64f306fa-6704-47a5-902b-7ac815fe2a5f"
+      Hint: Copyright
+      Value: "Copyright \xA9 2026"
+    - ID: "fd38d8aa-6435-433b-bc17-94646aac67da"
+      Hint: Heading
+      Value: "ADNOC Gas"
+    - ID: "a6ee95a1-33ed-450b-b640-107fceee44a5"
+      Hint: Description
+      Value: "Copyright \xA9 2026 Board of Directors Executive Management"
+    - ID: "4d31bd1a-6d02-48cf-bfa8-7adc1dd28b58"
+      Hint: col1Title
+      Value: Company
+    - ID: "712d201a-1055-48bd-990c-4a1fc5004397"
+      Hint: col1link1Label
+      Value: Company
+    - ID: "af7db6af-c198-4766-b122-4a1d8a5acbbb"
+      Hint: col1link1Link
+      Value: "<link linktype=\"external\" text=\"Company\" url=\"/en/our-company\" />"
+    - ID: "aa449fd9-dddd-424d-bda5-2d146f7bcc60"
+      Hint: col1link2Label
+      Value: Board of Directors
+    - ID: "b417ef4d-babc-45dd-adf3-43481f5c8ef8"
+      Hint: col1link2Link
+      Value: "<link linktype=\"external\" text=\"Board of Directors\" url=\"/en/our-company/board-of-directors\" />"
+    - ID: "e00e0d61-da33-4a5a-9cbb-fa34bf335931"
+      Hint: col1link3Label
+      Value: Executive Management
+    - ID: "0654c782-2a89-4d40-a719-60741dfa4578"
+      Hint: col1link3Link
+      Value: "<link linktype=\"external\" text=\"Executive Management\" url=\"/en/our-company/executive-management\" />"
+    - ID: "0bafb3d5-3d1b-44d4-81a3-55242764324f"
+      Hint: col2Title
+      Value: Our Operations
+    - ID: "55349923-2592-4dd9-9ee3-39e08213c78e"
+      Hint: col2link1Label
+      Value: Our Operations
+    - ID: "437b485f-3645-43b6-95e5-8635441d1f74"
+      Hint: col2link1Link
+      Value: "<link linktype=\"external\" text=\"Our Operations\" url=\"/en/our-operations\" />"
+    - ID: "807b5fab-c8b5-4fef-a107-2a4b73a43284"
+      Hint: col2link2Label
+      Value: Gas Processing
+    - ID: "ad246b1c-e8ca-4e8b-a763-4a678f3233a0"
+      Hint: col2link2Link
+      Value: "<link linktype=\"external\" text=\"Gas Processing\" url=\"/en/our-operations/gas-processing\" />"
+    - ID: "6652547f-c6c3-485d-9875-fb74d0f0f3bb"
+      Hint: col2link3Label
+      Value: LNG
+    - ID: "68f3dfc5-fdd8-4437-8463-4916bceefe85"
+      Hint: col2link3Link
+      Value: "<link linktype=\"external\" text=\"LNG\" url=\"/en/our-operations/lng\" />"
+    - ID: "bc3c8e54-4402-41bc-8e96-32fbca5aafdb"
+      Hint: col3Title
+      Value: Projects
+    - ID: "c2296c58-5f8d-4d0e-aa4a-8b69ea8639c0"
+      Hint: col3link1Label
+      Value: Projects
+    - ID: "4aeca41e-9d1f-4227-9b71-a0ac562f48f1"
+      Hint: col3link1Link
+      Value: "<link linktype=\"external\" text=\"Projects\" url=\"/en/our-projects\" />"
+    - ID: "19d988a4-e328-4426-a22c-7feb29d1764c"
+      Hint: col3link2Label
+      Value: Gas Growth
+    - ID: "661eed9d-e254-4872-96ab-2d7a054194f1"
+      Hint: col3link2Link
+      Value: "<link linktype=\"external\" text=\"Gas Growth\" url=\"/en/our-projects/gas-growth\" />"
+    - ID: "d5443a14-c97f-4c1e-b2a9-be7baf749c6f"
+      Hint: col3link3Label
+      Value: LNG Expansion
+    - ID: "e173ea43-f57e-405b-ab62-8491b2bf1c88"
+      Hint: col3link3Link
+      Value: "<link linktype=\"external\" text=\"LNG Expansion\" url=\"/en/our-projects/lng-expansion\" />"
+    - ID: "ecdebc01-12c6-4ec0-8104-9459ac1b750b"
+      Hint: col4Title
+      Value: Sustainability
+    - ID: "8d4e8680-4951-4875-8b91-667a189bf277"
+      Hint: col4link1Label
+      Value: Sustainability
+    - ID: "6b186e7d-a839-46dd-bd90-acd8cdc8a0e4"
+      Hint: col4link1Link
+      Value: "<link linktype=\"external\" text=\"Sustainability\" url=\"/en/sustainability\" />"
+    - ID: "c157f38a-6d89-4426-a0bb-9425d76125f3"
+      Hint: col4link2Label
+      Value: Environment
+    - ID: "bb6f10c3-f53d-43ca-8099-a08cae88275a"
+      Hint: col4link2Link
+      Value: "<link linktype=\"external\" text=\"Environment\" url=\"/en/sustainability/environment\" />"
+    - ID: "07ed18f9-f7f8-447e-8473-d3201cc61d30"
+      Hint: col4link3Label
+      Value: Social
+    - ID: "613f0c89-f722-444b-871e-1b09bcebfc60"
+      Hint: col4link3Link
+      Value: "<link linktype=\"external\" text=\"Social\" url=\"/en/sustainability/social\" />"
+    - ID: "1f8d7a9c-8fe8-4504-b0a9-1fa690007133"
+      Hint: col5Title
+      Value: Investor Relations
+    - ID: "99a67278-2f41-4e40-91dc-b47d4f93c23e"
+      Hint: col5link1Label
+      Value: Investor Relations
+    - ID: "bf4389e8-b851-4b73-ae57-134f7253bdb5"
+      Hint: col5link1Link
+      Value: "<link linktype=\"external\" text=\"Investor Relations\" url=\"/en/investor-relations\" />"
+    - ID: "978adff8-18ed-421f-9225-46039ba45756"
+      Hint: col5link2Label
+      Value: Financial Results
+    - ID: "754d52bd-2c60-4a03-8344-2430bd82aabb"
+      Hint: col5link2Link
+      Value: "<link linktype=\"external\" text=\"Financial Results\" url=\"/en/investor-relations/financial-results\" />"
+    - ID: "f51135ed-5ffa-418b-a7ed-7de8660864e3"
+      Hint: col5link3Label
+      Value: Contact IR
+    - ID: "2b09b7f4-d176-49f9-97ea-1b307cad7475"
+      Hint: col5link3Link
+      Value: "<link linktype=\"external\" text=\"Contact IR\" url=\"/en/investor-relations/ir-contact-us\" />"
+    - ID: "4158b88e-35d1-48ad-99dd-92d3ff0cbf1a"
+      Hint: social1Label
+      Value: LinkedIn
+    - ID: "47b2142d-149d-4535-aec0-f3c6198082a0"
+      Hint: social1Link
+      Value: "<link linktype=\"external\" text=\"LinkedIn\" url=\"https://www.linkedin.com/company/adnocgas/\" />"
+    - ID: "3475988b-d164-4c16-bba8-29bf06b263b1"
+      Hint: social2Label
+      Value: Twitter
+    - ID: "ebc46755-b658-4ef4-9aa7-fc12cf00649d"
+      Hint: social2Link
+      Value: "<link linktype=\"external\" text=\"Twitter\" url=\"https://www.twitter.com/AdnocGas\" />"
+    - ID: "019b4eaf-531d-4782-8806-61d8ee2c21e0"
+      Hint: social3Label
+      Value: Instagram
+    - ID: "9efacd52-7edb-4ecd-b8bd-32b7c98e9366"
+      Hint: social3Link
+      Value: "<link linktype=\"external\" text=\"Instagram\" url=\"https://www.instagram.com/adnocgas\" />"
+    - ID: "3fd491cd-dce3-4973-a53c-214f5945385f"
+      Hint: BottomLinkLabel
+      Value: Privacy Policy
+    - ID: "a22b1c01-bf2a-4258-8943-b4c68c6c982e"
+      Hint: BottomLinkHref
+      Value: "<link linktype=\"external\" text=\"Privacy Policy\" url=\"/en/privacy-policy\" />"
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260328T140753Z
@@ -17,17 +159,11 @@ Languages:
         sitecore\andiappan.ravi@omnia.ae
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "c9109af5-d0c1-4f04-b307-4fc152a20bf0"
-    - ID: "a6ee95a1-33ed-450b-b640-107fceee44a5"
-      Hint: Description
-      Value: Copyright � 2026 Board of Directors Executive Management
+      Value: "d4e5f6a7-b8c9-0123-defg-456789abcde0"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\andiappan.ravi@omnia.ae
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260328T140753Z
-    - ID: "fd38d8aa-6435-433b-bc17-94646aac67da"
-      Hint: Heading
-      Value: Company
+      Value: 20260330T200000Z

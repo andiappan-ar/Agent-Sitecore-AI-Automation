@@ -1,4 +1,4 @@
-﻿---
+---
 ID: "d46898e7-e0f4-4f4d-8e44-82b3ccc47871"
 Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
 Template: "50cef7b9-862f-4ca3-90ce-2e3ee6b48c80"
@@ -10,7 +10,58 @@ Languages:
     Fields:
     - ID: "13d6454b-f4fc-40ce-9b48-9e9e1dc35eed"
       Hint: Heading
-      Value: ADNOC Gas Delivers Record $5.2bn Net Income in 2025
+      Value: "Latest News"
+    - ID: "fd5aa0e0-96e0-444f-86fe-ea669567e37e"
+      Hint: Description
+      Value: ""
+    - ID: "c99cfbed-dd5b-41d9-9650-0675180f1929"
+      Hint: Cta
+      Value: ""
+    - ID: "421d0416-d58c-4857-8018-c3be2abbf8b4"
+      Hint: card1Date
+      Value: "February 09, 2026"
+    - ID: "1079e449-7e12-4670-b5db-e7f1baa806f8"
+      Hint: card1Heading
+      Value: "ADNOC Gas Delivers Record $5.2bn Net Income in 2025"
+    - ID: "025d0b03-0fbe-4480-a96a-08ab1b50f01a"
+      Hint: card1Description
+      Value: "$3.6 Billion Dividend for 2025 endorsed by Board. Domestic gas business EBITDA grew 10% year-on-year in 2025, supported by a 4% growth in domestic sales volumes."
+    - ID: "5548ac89-86d3-43e0-be24-644319c75ab8"
+      Hint: card1LinkLabel
+      Value: "Learn More"
+    - ID: "4b2b8a0c-22c9-4bc4-9eb1-edc9958df7ac"
+      Hint: card1LinkHref
+      Value: "https://www.adnocgas.ae/en/news-and-media/press-releases/2025/q4-2025"
+    - ID: "19158a7e-482d-49fa-94a4-1fefad8b1973"
+      Hint: card2Date
+      Value: "January 19, 2026"
+    - ID: "c350b2fc-6c49-43c6-bccc-10beac57862c"
+      Hint: card2Heading
+      Value: "ADNOC Gas Signs $3 Billion, 10-Year LNG Deal with Hindustan Petroleum Corporation Limited"
+    - ID: "51182464-9f91-42a3-92eb-4360faec1adc"
+      Hint: card2Description
+      Value: "India is now UAE's largest customer of LNG, 20% of LNG operated by ADNOC Gas will be supplied to India by 2029. $20 billion worth of LNG contracts signed in last 24 months between ADNOC Gas and Indian companies."
+    - ID: "1f2b87f1-bfa8-4b7e-af11-b8f4eb0035ad"
+      Hint: card2LinkLabel
+      Value: "Learn More"
+    - ID: "e28fc0d2-b304-4240-bb16-2edd857d1087"
+      Hint: card2LinkHref
+      Value: "https://www.adnocgas.ae/en/news-and-media/press-releases/2025/hpcl-press-release"
+    - ID: "c0511f74-8c85-49d3-9e0c-be9ced6985de"
+      Hint: card3Date
+      Value: "November 26, 2025"
+    - ID: "f05368cb-f1e7-424f-8f76-38d423ead368"
+      Hint: card3Heading
+      Value: "ADNOC Gas and EMSTEEL Sign $4 Billion, 20-Year Natural Gas Supply Agreement to Power UAE's Industrial Growth"
+    - ID: "ba8401b0-e12b-46a6-b5af-f7b0d7868cb5"
+      Hint: card3Description
+      Value: "Landmark agreement expands ADNOC Gas' long-term revenue base and secures stable, lower-carbon gas supply for EMSTEEL's operations."
+    - ID: "406448ff-ce7e-41fa-920a-e7ce43ef6a86"
+      Hint: card3LinkLabel
+      Value: "Learn More"
+    - ID: "9c237767-670a-44b3-905b-a092277be3bc"
+      Hint: card3LinkHref
+      Value: "https://www.adnocgas.ae/en/news-and-media/press-releases/2025/emsteel"
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260328T140752Z
@@ -27,7 +78,4 @@ Languages:
         sitecore\andiappan.ravi@omnia.ae
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260328T140752Z
-    - ID: "fd5aa0e0-96e0-444f-86fe-ea669567e37e"
-      Hint: Description
-      Value: February 09, 2026 January 19, 2026 November 26, 2025
+      Value: 20260330T200000Z
