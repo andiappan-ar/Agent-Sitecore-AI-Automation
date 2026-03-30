@@ -2,7 +2,7 @@
 
 /**
  * Header — Site header with utility bar, main navigation, and mobile menu
- * Sitecore fields: LogoImage, LogoAlt, nav1-5 x (Label, Link), util1-3 x (Label, Link), LanguageLabel, LanguageLink, SearchEnabled
+ * Sitecore fields: Logo, Heading, Description, nav1-7 x (Label, Link), util1-3 x (Label, Link), LanguageLabel, LanguageLink
  * Template: Header ({a08f7dba7c3f4893818e9e75ee073359})
  * Rendering: Header ({fbd7f2aed0b246a591740e30da28c985})
  */
@@ -27,8 +27,9 @@ interface HeaderParams {
 }
 
 export interface HeaderFields {
-  LogoImage?: ImageField;
-  LogoAlt?: TextField;
+  Logo?: ImageField;
+  Heading?: TextField;
+  Description?: TextField;
   nav1Label?: TextField;
   nav1Link?: LinkField;
   nav2Label?: TextField;
@@ -39,6 +40,10 @@ export interface HeaderFields {
   nav4Link?: LinkField;
   nav5Label?: TextField;
   nav5Link?: LinkField;
+  nav6Label?: TextField;
+  nav6Link?: LinkField;
+  nav7Label?: TextField;
+  nav7Link?: LinkField;
   util1Label?: TextField;
   util1Link?: LinkField;
   util2Label?: TextField;
@@ -81,6 +86,8 @@ const HeaderDefault = (
     { label: fields.nav3Label, link: fields.nav3Link },
     { label: fields.nav4Label, link: fields.nav4Link },
     { label: fields.nav5Label, link: fields.nav5Link },
+    { label: fields.nav6Label, link: fields.nav6Link },
+    { label: fields.nav7Label, link: fields.nav7Link },
   ].filter((n) => n.label?.value);
 
   const utilLinks = [
@@ -120,12 +127,12 @@ const HeaderDefault = (
         <div className="max-w-[1400px] mx-auto px-[8px] flex items-center justify-between py-[12px] lg:py-[16px]">
           {/* Logo */}
           <a href="/" className="shrink-0">
-            {(fields.LogoImage?.value?.src || isPageEditing) ? (
+            {(fields.Logo?.value?.src || isPageEditing) ? (
               <ContentSdkImage
                 field={{
-                  ...fields.LogoImage,
+                  ...fields.Logo,
                   value: {
-                    ...fields.LogoImage?.value,
+                    ...fields.Logo?.value,
                     style: { height: '64px', width: 'auto' },
                   },
                 }}

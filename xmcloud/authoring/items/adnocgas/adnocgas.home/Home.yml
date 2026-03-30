@@ -23,16 +23,9 @@ SharedFields:
       <d
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
         <r
-          uid="{A1000001-0001-0001-0001-000000000001}"
+          uid="{A1000001-0001-0001-0001-000000000010}"
           p:before="*"
-          s:ds="local:/Data/test-hero"
-          s:id="{6C82126E-FBC1-497D-BEA3-076C1194053F}"
-          s:ph="headless-main" />
-        <r
-          uid="{A1000001-0001-0001-0001-000000000006}"
-          p:after="*[1=2]"
-          s:ds="local:/Data/two-column-text__dark-aos-init"
-          s:id="{802BF9F5-EB60-40A0-BE65-28CEE6A4810D}"
+          s:id="{FBD7F2AE-D0B2-46A5-9174-0E30DA28C985}"
           s:ph="headless-main" />
       </d>
     </r>

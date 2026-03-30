@@ -3,6 +3,10 @@ ID: "74a73ff5-098e-4541-ae72-719f626dd008"
 Parent: "6a3282a1-69ac-4930-bfd7-b503cbf07fa7"
 Template: "a08f7dba-7c3f-4893-818e-9e75ee073359"
 Path: "/sitecore/content/Adnoc/adnocgas/Home/Data/position-fixed-desktop__navigation"
+SharedFields:
+- ID: "4f6cc148-4715-4e0d-a03a-2342c173d855"
+  Hint: Logo
+  Value: "<image mediaid=\"\" src=\"https://www.adnocgas.ae/-/media/gas/logo/listed-company-logos---website_white_adnoc-gas-vertical.ashx\" />"
 Languages:
 - Language: en
   Versions:
@@ -15,19 +19,79 @@ Languages:
       Hint: __Owner
       Value: |
         sitecore\andiappan.ravi@omnia.ae
-    - ID: "63bcc5cf-a9fe-4bc8-bf91-bd07c57a4726"
-      Hint: Description
-      Value: "News and Media Contact Us ???????"
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "9c697a06-d7db-45f5-8823-a60bd6bfa2f6"
     - ID: "a434fa71-d2a8-4918-bdb2-5de095393559"
       Hint: Heading
-      Value: Company
+      Value: "ADNOC Gas"
+    - ID: "63bcc5cf-a9fe-4bc8-bf91-bd07c57a4726"
+      Hint: Description
+      Value: "ADNOC Gas - Navigation"
+    - ID: "746c517e-d10d-40a2-a4a8-d7a9038f54f9"
+      Hint: nav1Label
+      Value: "Company"
+    - ID: "1450ce12-85fa-487c-b423-1e782bd2f556"
+      Hint: nav1Link
+      Value: "<link linktype=\"internal\" text=\"Company\" url=\"/en/our-company\" />"
+    - ID: "2c0ab840-630e-4f48-b423-1923bd77c137"
+      Hint: nav2Label
+      Value: "Our Operations"
+    - ID: "f65a7821-0bcc-4bac-a9a9-009c4d94509b"
+      Hint: nav2Link
+      Value: "<link linktype=\"internal\" text=\"Our Operations\" url=\"/en/our-operations\" />"
+    - ID: "d0398c8e-7b46-4d50-b5ae-8f0c3580198f"
+      Hint: nav3Label
+      Value: "Sustainability"
+    - ID: "68871901-18ea-4da3-89b8-786bbd3398c4"
+      Hint: nav3Link
+      Value: "<link linktype=\"internal\" text=\"Sustainability\" url=\"/en/sustainability\" />"
+    - ID: "1bff7858-a377-4052-8fdd-f5a77a309a3c"
+      Hint: nav4Label
+      Value: "Projects"
+    - ID: "1221a9f5-b317-4e40-b540-fe7ccdad6ebb"
+      Hint: nav4Link
+      Value: "<link linktype=\"internal\" text=\"Projects\" url=\"/en/our-projects\" />"
+    - ID: "0db2976c-cb8f-4fbe-8132-67d65c356b54"
+      Hint: nav5Label
+      Value: "ENERGYai"
+    - ID: "65393e29-8bfd-4ee7-a592-e9032b127d8a"
+      Hint: nav5Link
+      Value: "<link linktype=\"internal\" text=\"ENERGYai\" url=\"/en/energyai\" />"
+    - ID: "ad8394d7-63c4-4533-9a75-447d74a67443"
+      Hint: nav6Label
+      Value: "Marketing"
+    - ID: "298df2f7-7772-4260-b90d-b4238b325f01"
+      Hint: nav6Link
+      Value: "<link linktype=\"internal\" text=\"Marketing\" url=\"/en/marketing\" />"
+    - ID: "fba8c4d4-2867-460a-a3af-672f90fd7fb2"
+      Hint: nav7Label
+      Value: "Investor Relations"
+    - ID: "b557cdec-df28-4b4b-8aa4-817c00ed258c"
+      Hint: nav7Link
+      Value: "<link linktype=\"internal\" text=\"Investor Relations\" url=\"/en/investor-relations\" />"
+    - ID: "1f379abf-fdfd-4a61-920b-f679d072c7bf"
+      Hint: util1Label
+      Value: "News and Media"
+    - ID: "71cefd7b-2871-4cd1-b511-d6b03c7e54b9"
+      Hint: util1Link
+      Value: "<link linktype=\"internal\" text=\"News and Media\" url=\"/en/news-and-media/press-releases\" />"
+    - ID: "35f5e3b9-40b3-49cc-b4f9-00cd6b144c46"
+      Hint: util2Label
+      Value: "Contact Us"
+    - ID: "ce6bed21-bef2-4d9a-b841-cb5bd4da8a41"
+      Hint: util2Link
+      Value: "<link linktype=\"internal\" text=\"Contact Us\" url=\"/en/investor-relations/ir-contact-us\" />"
+    - ID: "a3b7e2c1-8f45-4d92-b6e3-1c9d5a724f08"
+      Hint: LanguageLabel
+      Value: "العربية"
+    - ID: "b5c9d3e7-2f18-4a6b-8d94-7e1c0a5f3b26"
+      Hint: LanguageLink
+      Value: "<link linktype=\"internal\" text=\"العربية\" url=\"/ar\" />"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\andiappan.ravi@omnia.ae
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260328T140751Z
+      Value: 20260330T190000Z

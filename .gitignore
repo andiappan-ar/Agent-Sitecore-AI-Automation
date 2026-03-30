@@ -65,3 +65,4 @@ xmcloud/.sitecore/package-cache/
 
 # Logs
 *.log
+*.txt
